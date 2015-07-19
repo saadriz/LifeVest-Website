@@ -151,7 +151,7 @@ $(function () {
         segmentShowStroke: true,
         segmentStrokeColor: "#fff",
         segmentStrokeWidth: 2,
-        percentageInnerCutout: 45, // This is 0 for Pie charts
+        percentageInnerCutout: 20, // This is 0 for Pie charts
         animationSteps: 100,
         animationEasing: "easeOutBounce",
         animateRotate: true,
