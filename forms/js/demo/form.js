@@ -16,6 +16,16 @@ function getFormData(dom_query){
 	return out;
 }
 
+function calculateTotal(object, score) {
+    $.each(object, function(index, value) {
+        console.log(index);
+        console.log(value);
+        score.robo += scoreRules[index][value].robo;
+        score.brokerage += scoreRules[index][value].brokerage;
+        score.fa += scoreRules[index][value].fa;
+        score.ria += scoreRules[index][value].ria;
+    }); 
+}
 
 $(function() {
 	// score object
@@ -37,26 +47,32 @@ $(function() {
 	 */
 	// get user information and store it in cookies
 	var submitFirstStep = function() {
+        var user = getFormData($("form.form_basic"));
 		console.debug(getFormData($("form.form_basic")));
 		form_basic.fadeOut();
 		form_basic2.fadeIn();
 	};
 	// get the first form answers and store them in cookies
 	var submitSecondStep = function() {
-		console.debug(getFormData($("form.form_basic2")));
+        calculateTotal(getFormData($("form.form_basic2")), score);
+        console.debug(getFormData($("form.form_basic2")));
 		form_basic2.fadeOut();
 		form_basic3.fadeIn();
 	};
 	// get the second form answers and store them in cookies
 	var submitThirdStep = function() {
-		console.debug(getFormData($("form.form_basic3")));
+		calculateTotal(getFormData($("form.form_basic3")), score);
+        console.debug(getFormData($("form.form_basic3")));
 		form_basic3.fadeOut();
 		form_basic4.fadeIn();
 	};
 	// get the third form answers and store them in cookies
 	// depend on calculated score redirect to the dedicated page
 	var submitFourthStep = function() {
-		console.debug(getFormData($("form.form_basic4")));
+		calculateTotal(getFormData($("form.form_basic4")), score);
+        console.debug(getFormData($("form.form_basic4")));
+        console.debug(score);
+		
 	};
 
 	// buttons event triggering
