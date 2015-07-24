@@ -24,7 +24,8 @@
         <div class="row border-bottom">
             <nav class="navbar navbar-static-top" role="navigation">
                 <div class="navbar-header">
-                    <button aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
+                    <button aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse"
+                            class="navbar-toggle collapsed" type="button">
                         <i class="fa fa-reorder"></i>
                     </button>
                     <a href="#" class="navbar-brand">LifVest</a>
@@ -35,7 +36,8 @@
                             <a aria-expanded="false" role="button" href="layouts.html">Start investing</a>
                         </li>
                         <li class="dropdown">
-                            <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"> Partners <span class="caret"></span></a>
+                            <a aria-expanded="false" role="button" href="#" class="dropdown-toggle"
+                               data-toggle="dropdown"> Partners <span class="caret"></span></a>
                             <ul role="menu" class="dropdown-menu">
                                 <li><a href="">Menu item</a>
                                 </li>
@@ -48,7 +50,8 @@
                             </ul>
                         </li>
                         <li class="dropdown">
-                            <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"> How it works <span class="caret"></span></a>
+                            <a aria-expanded="false" role="button" href="#" class="dropdown-toggle"
+                               data-toggle="dropdown"> How it works <span class="caret"></span></a>
                             <ul role="menu" class="dropdown-menu">
                                 <li><a href="">Menu item</a>
                                 </li>
@@ -61,7 +64,8 @@
                             </ul>
                         </li>
                         <li class="dropdown">
-                            <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"> Testimonial <span class="caret"></span></a>
+                            <a aria-expanded="false" role="button" href="#" class="dropdown-toggle"
+                               data-toggle="dropdown"> Testimonial <span class="caret"></span></a>
                             <ul role="menu" class="dropdown-menu">
                                 <li><a href="">Menu item</a>
                                 </li>
@@ -86,7 +90,7 @@
                 </div>
             </nav>
         </div>
-        <div class="row wrapper border-bottom white-bg page-heading">
+        <div class="row wrapper border-bottom white-bg page-heading form">
             <div class="col-lg-10">
                 <h2>Let's find the right account for you in 4 simple steps</h2>
 
@@ -95,18 +99,28 @@
 
             </div>
         </div>
+        <div class="row wrapper border-bottom white-bg page-heading result" style="display: none;">
+            <div class="col-lg-10">
+                <h2>Our recommendations for you to start investing</h2>
+
+            </div>
+            <div class="col-lg-2">
+
+            </div>
+        </div>
         <div class="wrapper wrapper-content animated fadeInRight">
+            <div id="forms_block" class="form">
             <div id="form_basic" class="row">
                 <div class="col-lg-5">
                     <div class="jumbotron">
                         <h2><b>Step 1: About You</b></h2>
+
                         <p>Here we get to know you better. Your information is completely confidential.</p>
 
                     </div>
                 </div>
                 <div class="col-lg-7">
                     <div class="ibox float-e-margins">
-
 
 
                     </div>
@@ -120,18 +134,20 @@
                         </div>
 
 
-
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="ibox float-e-margins">
 
                                     <div class="ibox-content">
-                                        <form action="https://docs.google.com/forms/d/1DOJLd8Nu100rRYBg76mIhAMR-kIHKS-sjn2rDfcFZo4/formResponse" method="POST" id="ss-form" target="_self" onsubmit="" data-toggle="validator" role="form" class="form_basic form-horizontal">
+                                        <form action="https://docs.google.com/forms/d/1DOJLd8Nu100rRYBg76mIhAMR-kIHKS-sjn2rDfcFZo4/formResponse"
+                                              method="POST" id="ss-form" target="_self" onsubmit=""
+                                              data-toggle="validator" role="form" class="form_basic form-horizontal">
                                             <div class="form-group">
                                                 <label class="col-sm-2 control-label">Name</label>
 
                                                 <div class="col-sm-10">
-                                                    <input id="Name" name="Name" placeholder="Full name" type="text" class="form-control" required>
+                                                    <input id="Name" name="Name" placeholder="Full name" type="text"
+                                                           class="form-control" required>
                                                 </div>
                                             </div>
                                             <div class="hr-line-dashed"></div>
@@ -146,7 +162,8 @@
                                                 </div>
 
                                                 <div class="col-sm-10">
-                                                    <input type="email" id="email" name="email" class="form-control" required />
+                                                    <input type="email" id="email" name="email" class="form-control"
+                                                           required/>
                                                     <span class="help-block m-b-none">We do not send any spam.</span>
                                                 </div>
                                             </div>
@@ -154,15 +171,19 @@
                                             <div class="hr-line-dashed"></div>
                                             <div class="form-group">
                                                 <label class="col-sm-2 control-label">Date of birth</label>
+
                                                 <div class="col-sm-10">
-                                                    <input type="text" id="birthdate" name="birth_date" placeholder="Month/Day/Year" class="form-control">
+                                                    <input type="text" id="birthdate" name="birth_date"
+                                                           placeholder="Month/Day/Year" class="form-control">
                                                 </div>
                                             </div>
                                             <div class="hr-line-dashed"></div>
                                             <div class="form-group">
                                                 <label for="sexe" class="col-sm-2 control-label">Sex</label>
+
                                                 <div class="col-sm-10">
-                                                    <select id="sexe" name="sexe" class="form-control m-b" name="account">
+                                                    <select id="sexe" name="sexe" class="form-control m-b"
+                                                            name="account">
                                                         <option>Male</option>
                                                         <option>Female</option>
                                                     </select>
@@ -171,26 +192,32 @@
                                             <div class="hr-line-dashed"></div>
                                             <div class="form-group">
                                                 <label class="col-sm-2 control-label">Employment status
-                                                    <br/><small class="text-navy">Choose the best option</small>
+                                                    <br/>
+                                                    <small class="text-navy">Choose the best option</small>
                                                 </label>
 
                                                 <div class="col-sm-10">
 
                                                     <div class="i-checks">
                                                         <label>
-                                                            <input type="radio" value="Employed" name="employment_status"> <i></i> Employed</label>
+                                                            <input type="radio" value="Employed"
+                                                                   name="employment_status"> <i></i> Employed</label>
                                                     </div>
                                                     <div class="i-checks">
                                                         <label>
-                                                            <input type="radio" checked="" value="Unemployed" name="employment_status"> <i></i> Unemployed </label>
+                                                            <input type="radio" checked="" value="Unemployed"
+                                                                   name="employment_status"> <i></i> Unemployed </label>
                                                     </div>
                                                     <div class="i-checks">
                                                         <label>
-                                                            <input type="radio" checked="" value="Retired" name="employment_status"> <i></i> Retired </label>
+                                                            <input type="radio" checked="" value="Retired"
+                                                                   name="employment_status"> <i></i> Retired </label>
                                                     </div>
                                                     <div class="i-checks">
                                                         <label>
-                                                            <input type="radio" value="Stay at home" name="employment_status"> <i></i> Stay at home</label>
+                                                            <input type="radio" value="Stay at home"
+                                                                   name="employment_status"> <i></i> Stay at
+                                                            home</label>
                                                     </div>
 
                                                 </div>
@@ -198,7 +225,8 @@
 
                                             <div class="form-group">
                                                 <div class="col-sm-4 col-sm-offset-2">
-                                                    <a id="submitFirstStep" class="btn btn-primary" type="submit">Next</a>
+                                                    <a id="submitFirstStep" class="btn btn-primary"
+                                                       type="submit">Next</a>
                                                     <!--                                                        <a href="form_basic2.html" class="btn btn-primary" input type="submit" value="Submit">Next</a>-->
                                                     <!--                                                        <a href="form_basic2.html" class="btn btn-primary" type="submit" value="Submit">Next</a>-->
                                                     <!-- <input type="submit" value="Check" class="btn btn-success"> -->
@@ -225,13 +253,13 @@
                 <div class="col-lg-5">
                     <div class="jumbotron">
                         <h2><b>Step 2: Your preferences</b></h2>
+
                         <p>Let's figure out how active you want to be</p>
 
                     </div>
                 </div>
                 <div class="col-lg-7">
                     <div class="ibox float-e-margins">
-
 
 
                     </div>
@@ -245,7 +273,6 @@
                         </div>
 
 
-
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="ibox float-e-margins">
@@ -254,7 +281,8 @@
                                         <form method="get" class="form_basic2 form-horizontal">
 
                                             <div class="form-group">
-                                                <label class="col-sm-8">How often do you plan on following financial news and markets?
+                                                <label class="col-sm-8">How often do you plan on following financial
+                                                    news and markets?
                                                     <br/>
                                                 </label>
 
@@ -262,31 +290,38 @@
 
                                                     <div class="i-checks">
                                                         <label>
-                                                            <input type="radio" value="0" name="s2q1"> <i></i> Very rarely</label>
+                                                            <input type="radio" value="0" name="s2q1"> <i></i> Very
+                                                            rarely</label>
                                                     </div>
                                                     <div class="i-checks">
                                                         <label>
-                                                            <input type="radio" value="1" name="s2q1"> <i></i> Quarterly </label>
+                                                            <input type="radio" value="1" name="s2q1"> <i></i> Quarterly
+                                                        </label>
                                                     </div>
                                                     <div class="i-checks">
                                                         <label>
-                                                            <input type="radio" value="2" name="s2q1"> <i></i> Monthly </label>
+                                                            <input type="radio" value="2" name="s2q1"> <i></i> Monthly
+                                                        </label>
                                                     </div>
                                                     <div class="i-checks">
                                                         <label>
-                                                            <input type="radio" value="3" name="s2q1"> <i></i> 2-3 times a month</label>
+                                                            <input type="radio" value="3" name="s2q1"> <i></i> 2-3 times
+                                                            a month</label>
                                                     </div>
                                                     <div class="i-checks">
                                                         <label>
-                                                            <input type="radio" value="4" name="s2q1"> <i></i> Weekly </label>
+                                                            <input type="radio" value="4" name="s2q1"> <i></i> Weekly
+                                                        </label>
                                                     </div>
                                                     <div class="i-checks">
                                                         <label>
-                                                            <input type="radio" value="5" name="s2q1"> <i></i> 2-3 times a week</label>
+                                                            <input type="radio" value="5" name="s2q1"> <i></i> 2-3 times
+                                                            a week</label>
                                                     </div>
                                                     <div class="i-checks">
                                                         <label>
-                                                            <input type="radio" value="6" name="s2q1"> <i></i> Daily</label>
+                                                            <input type="radio" value="6" name="s2q1"> <i></i>
+                                                            Daily</label>
                                                     </div>
 
                                                 </div>
@@ -294,9 +329,9 @@
                                             <div class="hr-line-dashed"></div>
 
 
-
                                             <div class="form-group">
-                                                <label class="col-sm-8">How many hours a month are you willing to spend on learning, researching, and rebalancing your investments?
+                                                <label class="col-sm-8">How many hours a month are you willing to spend
+                                                    on learning, researching, and rebalancing your investments?
                                                     <br/>
                                                 </label>
 
@@ -308,19 +343,23 @@
                                                     </div>
                                                     <div class="i-checks">
                                                         <label>
-                                                            <input type="radio" value="1" name="s2q2"> 1-3 hours </label>
+                                                            <input type="radio" value="1" name="s2q2"> 1-3 hours
+                                                        </label>
                                                     </div>
                                                     <div class="i-checks">
                                                         <label>
-                                                            <input type="radio" value="2" name="s2q2"> 3-5 hours </label>
+                                                            <input type="radio" value="2" name="s2q2"> 3-5 hours
+                                                        </label>
                                                     </div>
                                                     <div class="i-checks">
                                                         <label>
-                                                            <input type="radio" value="3" name="s2q2"> 5-15 hours</label>
+                                                            <input type="radio" value="3" name="s2q2"> 5-15
+                                                            hours</label>
                                                     </div>
                                                     <div class="i-checks">
                                                         <label>
-                                                            <input type="radio" value="4" name="s2q2"> 15+ hours  </label>
+                                                            <input type="radio" value="4" name="s2q2"> 15+ hours
+                                                        </label>
                                                     </div>
 
                                                 </div>
@@ -329,7 +368,8 @@
 
 
                                             <div class="form-group">
-                                                <label class="col-sm-8">Assume you have a portfolio of 10 investments. How often would you want to change your investment mix?
+                                                <label class="col-sm-8">Assume you have a portfolio of 10 investments.
+                                                    How often would you want to change your investment mix?
                                                     <br/>
                                                 </label>
 
@@ -345,19 +385,23 @@
                                                     </div>
                                                     <div class="i-checks">
                                                         <label>
-                                                            <input type="radio" value="2" name="s2q3"> Quarterly </label>
+                                                            <input type="radio" value="2" name="s2q3"> Quarterly
+                                                        </label>
                                                     </div>
                                                     <div class="i-checks">
                                                         <label>
-                                                            <input type="radio" value="3" name="s2q3"> Twice a year</label>
+                                                            <input type="radio" value="3" name="s2q3"> Twice a
+                                                            year</label>
                                                     </div>
                                                     <div class="i-checks">
                                                         <label>
-                                                            <input type="radio" value="4" name="s2q3"> Once a year  </label>
+                                                            <input type="radio" value="4" name="s2q3"> Once a year
+                                                        </label>
                                                     </div>
                                                     <div class="i-checks">
                                                         <label>
-                                                            <input type="radio" value="5" name="s2q3"> Once every few years </label>
+                                                            <input type="radio" value="5" name="s2q3"> Once every few
+                                                            years </label>
                                                     </div>
 
                                                 </div>
@@ -365,7 +409,8 @@
                                             <div class="hr-line-dashed"></div>
 
                                             <div class="form-group">
-                                                <label class="col-sm-8">How would you rate your personal knowledge with investing?
+                                                <label class="col-sm-8">How would you rate your personal knowledge with
+                                                    investing?
                                                     <br/>
                                                 </label>
 
@@ -395,7 +440,8 @@
                                             </div>
                                             <div class="form-group">
                                                 <div class="col-sm-4 col-sm-offset-2">
-                                                    <a id="submitSecondStep" class="btn btn-primary" type="submit">Next</a>
+                                                    <a id="submitSecondStep" class="btn btn-primary"
+                                                       type="submit">Next</a>
                                                 </div>
                                             </div>
                                         </form>
@@ -405,20 +451,18 @@
                         </div>
                     </div>
                 </div>
-
-
             </div>
             <div id="form_basic3" style="display: none;" class="row">
                 <div class="col-lg-5">
                     <div class="jumbotron">
                         <h2><b>Step 3: Your habits</b></h2>
+
                         <p>Let's discuss your habits</p>
 
                     </div>
                 </div>
                 <div class="col-lg-7">
                     <div class="ibox float-e-margins">
-
 
 
                     </div>
@@ -430,7 +474,6 @@
                         <div class="col-lg-2">
 
                         </div>
-
 
 
                         <div class="row">
@@ -449,23 +492,28 @@
 
                                                     <div class="i-checks">
                                                         <label>
-                                                            <input type="radio" value="0" name="s3q1"> <i></i> Daily</label>
+                                                            <input type="radio" value="0" name="s3q1"> <i></i>
+                                                            Daily</label>
                                                     </div>
                                                     <div class="i-checks">
                                                         <label>
-                                                            <input type="radio" value="1" name="s3q1"> <i></i> 2-3 times a week</label>
+                                                            <input type="radio" value="1" name="s3q1"> <i></i> 2-3 times
+                                                            a week</label>
                                                     </div>
                                                     <div class="i-checks">
                                                         <label>
-                                                            <input type="radio" value="2" name="s3q1"> <i></i> Weekly </label>
+                                                            <input type="radio" value="2" name="s3q1"> <i></i> Weekly
+                                                        </label>
                                                     </div>
                                                     <div class="i-checks">
                                                         <label>
-                                                            <input type="radio" value="3" name="s3q1"> <i></i> A few times a month</label>
+                                                            <input type="radio" value="3" name="s3q1"> <i></i> A few
+                                                            times a month</label>
                                                     </div>
                                                     <div class="i-checks">
                                                         <label>
-                                                            <input type="radio" value="4" name="s3q1"> <i></i> Monthly </label>
+                                                            <input type="radio" value="4" name="s3q1"> <i></i> Monthly
+                                                        </label>
                                                     </div>
                                                 </div>
                                             </div>
@@ -480,27 +528,33 @@
 
                                                     <div class="i-checks">
                                                         <label>
-                                                            <input type="radio" value="0" name="s3q2"> <i></i> $0 - $2,500</label>
+                                                            <input type="radio" value="0" name="s3q2"> <i></i> $0 -
+                                                            $2,500</label>
                                                     </div>
                                                     <div class="i-checks">
                                                         <label>
-                                                            <input type="radio" value="1" name="s3q2"> <i></i> $2,500 - $10,000 </label>
+                                                            <input type="radio" value="1" name="s3q2"> <i></i> $2,500 -
+                                                            $10,000 </label>
                                                     </div>
                                                     <div class="i-checks">
                                                         <label>
-                                                            <input type="radio" value="2" name="s3q2"> <i></i> $10,000 - $50,000</label>
+                                                            <input type="radio" value="2" name="s3q2"> <i></i> $10,000 -
+                                                            $50,000</label>
                                                     </div>
                                                     <div class="i-checks">
                                                         <label>
-                                                            <input type="radio" value="3" name="s3q2"> <i></i> $50,000 - $100,000</label>
+                                                            <input type="radio" value="3" name="s3q2"> <i></i> $50,000 -
+                                                            $100,000</label>
                                                     </div>
                                                     <div class="i-checks">
                                                         <label>
-                                                            <input type="radio" value="4" name="s3q2"> <i></i> $100,000 - $250,000 </label>
+                                                            <input type="radio" value="4" name="s3q2"> <i></i> $100,000
+                                                            - $250,000 </label>
                                                     </div>
                                                     <div class="i-checks">
                                                         <label>
-                                                            <input type="radio" value="5" name="s3q2"> <i></i> More than $250,000</label>
+                                                            <input type="radio" value="5" name="s3q2"> <i></i> More than
+                                                            $250,000</label>
                                                     </div>
                                                 </div>
                                             </div>
@@ -520,19 +574,23 @@
                                                     </div>
                                                     <div class="i-checks">
                                                         <label>
-                                                            <input type="radio" value="1" name="s3q3"> <i></i> High </label>
+                                                            <input type="radio" value="1" name="s3q3"> <i></i> High
+                                                        </label>
                                                     </div>
                                                     <div class="i-checks">
                                                         <label>
-                                                            <input type="radio" value="2" name="s3q3"> <i></i> Average </label>
+                                                            <input type="radio" value="2" name="s3q3"> <i></i> Average
+                                                        </label>
                                                     </div>
                                                     <div class="i-checks">
                                                         <label>
-                                                            <input type="radio" value="3" name="s3q3"> <i></i> Low</label>
+                                                            <input type="radio" value="3" name="s3q3"> <i></i>
+                                                            Low</label>
                                                     </div>
                                                     <div class="i-checks">
                                                         <label>
-                                                            <input type="radio" value="4" name="s3q3"> <i></i> Very low </label>
+                                                            <input type="radio" value="4" name="s3q3"> <i></i> Very low
+                                                        </label>
                                                     </div>
                                                 </div>
                                             </div>
@@ -540,7 +598,8 @@
 
 
                                             <div class="form-group">
-                                                <label class="col-sm-8">At what level of loss would you feel compelled to change your investments?
+                                                <label class="col-sm-8">At what level of loss would you feel compelled
+                                                    to change your investments?
                                                     <br/>
                                                 </label>
 
@@ -548,23 +607,28 @@
 
                                                     <div class="i-checks">
                                                         <label>
-                                                            <input type="radio" value="0" name="s3q4"> <i></i> 0 to 5%</label>
+                                                            <input type="radio" value="0" name="s3q4"> <i></i> 0 to
+                                                            5%</label>
                                                     </div>
                                                     <div class="i-checks">
                                                         <label>
-                                                            <input type="radio" value="1" name="s3q4"> <i></i> 5 to 15% </label>
+                                                            <input type="radio" value="1" name="s3q4"> <i></i> 5 to 15%
+                                                        </label>
                                                     </div>
                                                     <div class="i-checks">
                                                         <label>
-                                                            <input type="radio" value="2" name="s3q4"> <i></i> 15 to 25% </label>
+                                                            <input type="radio" value="2" name="s3q4"> <i></i> 15 to 25%
+                                                        </label>
                                                     </div>
                                                     <div class="i-checks">
                                                         <label>
-                                                            <input type="radio" value="3" name="s3q4"> <i></i> 25 to 50% month</label>
+                                                            <input type="radio" value="3" name="s3q4"> <i></i> 25 to 50%
+                                                            month</label>
                                                     </div>
                                                     <div class="i-checks">
                                                         <label>
-                                                            <input type="radio" value="4" name="s3q4"> <i></i> More than 50% </label>
+                                                            <input type="radio" value="4" name="s3q4"> <i></i> More than
+                                                            50% </label>
                                                     </div>
 
                                                 </div>
@@ -573,7 +637,8 @@
 
 
                                             <div class="form-group">
-                                                <label class="col-sm-8">How long on average do foresee owning an investment before selling?
+                                                <label class="col-sm-8">How long on average do foresee owning an
+                                                    investment before selling?
                                                     <br/>
                                                 </label>
 
@@ -581,27 +646,33 @@
 
                                                     <div class="i-checks">
                                                         <label>
-                                                            <input type="radio" value="0" name="s3q5"> <i></i> Intra-month</label>
+                                                            <input type="radio" value="0" name="s3q5"> <i></i>
+                                                            Intra-month</label>
                                                     </div>
                                                     <div class="i-checks">
                                                         <label>
-                                                            <input type="radio" value="1" name="s3q5"> <i></i> 1 month </label>
+                                                            <input type="radio" value="1" name="s3q5"> <i></i> 1 month
+                                                        </label>
                                                     </div>
                                                     <div class="i-checks">
                                                         <label>
-                                                            <input type="radio" value="2" name="s3q5"> <i></i> 6 months </label>
+                                                            <input type="radio" value="2" name="s3q5"> <i></i> 6 months
+                                                        </label>
                                                     </div>
                                                     <div class="i-checks">
                                                         <label>
-                                                            <input type="radio" value="3" name="s3q5"> <i></i> 1 year</label>
+                                                            <input type="radio" value="3" name="s3q5"> <i></i> 1
+                                                            year</label>
                                                     </div>
                                                     <div class="i-checks">
                                                         <label>
-                                                            <input type="radio" value="4" name="s3q5"> <i></i> 2-3 years </label>
+                                                            <input type="radio" value="4" name="s3q5"> <i></i> 2-3 years
+                                                        </label>
                                                     </div>
                                                     <div class="i-checks">
                                                         <label>
-                                                            <input type="radio" value="5" name="s3q5"> <i></i> 3-10 years</label>
+                                                            <input type="radio" value="5" name="s3q5"> <i></i> 3-10
+                                                            years</label>
                                                     </div>
                                                     <div class="i-checks">
                                                         <label>
@@ -613,10 +684,10 @@
                                             <div class="hr-line-dashed"></div>
 
 
-
                                             <div class="form-group">
                                                 <div class="col-sm-4 col-sm-offset-2">
-                                                    <a id="submitThirdStep" class="btn btn-primary" type="submit">Next</a>
+                                                    <a id="submitThirdStep" class="btn btn-primary"
+                                                       type="submit">Next</a>
                                                 </div>
                                             </div>
                                         </form>
@@ -631,6 +702,7 @@
                 <div class="col-lg-5">
                     <div class="jumbotron">
                         <h2><b>Step 4: Your service preferences</b></h2>
+
                         <p>Let's discuss how you like your sevice</p>
 
                     </div>
@@ -649,16 +721,16 @@
                         </div>
 
 
-
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="ibox float-e-margins">
 
                                     <div class="ibox-content">
-                                        <form  method="get" class="form_basic4 form-horizontal">
+                                        <form method="get" class="form_basic4 form-horizontal">
 
                                             <div class="form-group">
-                                                <label class="col-sm-8">What is your level of trust and confidence with the finance industry as a whole?
+                                                <label class="col-sm-8">What is your level of trust and confidence with
+                                                    the finance industry as a whole?
                                                     <br/>
                                                 </label>
 
@@ -666,15 +738,18 @@
 
                                                     <div class="i-checks">
                                                         <label>
-                                                            <input type="radio" value="0" name="s4q1"> <i></i> High</label>
+                                                            <input type="radio" value="0" name="s4q1"> <i></i>
+                                                            High</label>
                                                     </div>
                                                     <div class="i-checks">
                                                         <label>
-                                                            <input type="radio" value="1" name="s4q1"> <i></i> Medium </label>
+                                                            <input type="radio" value="1" name="s4q1"> <i></i> Medium
+                                                        </label>
                                                     </div>
                                                     <div class="i-checks">
                                                         <label>
-                                                            <input type="radio" value="2" name="s4q1"> <i></i> Low </label>
+                                                            <input type="radio" value="2" name="s4q1"> <i></i> Low
+                                                        </label>
                                                     </div>
 
                                                 </div>
@@ -682,7 +757,8 @@
                                             <div class="hr-line-dashed"></div>
 
                                             <div class="form-group">
-                                                <label class="col-sm-8">How important is having an expert to ask questions about your investments?
+                                                <label class="col-sm-8">How important is having an expert to ask
+                                                    questions about your investments?
                                                     <br/>
                                                 </label>
 
@@ -690,15 +766,18 @@
 
                                                     <div class="i-checks">
                                                         <label>
-                                                            <input type="radio" value="0" name="s4q2"> <i></i> High</label>
+                                                            <input type="radio" value="0" name="s4q2"> <i></i>
+                                                            High</label>
                                                     </div>
                                                     <div class="i-checks">
                                                         <label>
-                                                            <input type="radio" value="1" name="s4q2"> <i></i> Medium </label>
+                                                            <input type="radio" value="1" name="s4q2"> <i></i> Medium
+                                                        </label>
                                                     </div>
                                                     <div class="i-checks">
                                                         <label>
-                                                            <input type="radio" value="2" name="s4q2"> <i></i> Low </label>
+                                                            <input type="radio" value="2" name="s4q2"> <i></i> Low
+                                                        </label>
                                                     </div>
 
                                                 </div>
@@ -706,7 +785,8 @@
                                             <div class="hr-line-dashed"></div>
 
                                             <div class="form-group">
-                                                <label class="col-sm-8">How important is the flexibilty to adjust your investments to you?
+                                                <label class="col-sm-8">How important is the flexibilty to adjust your
+                                                    investments to you?
                                                     <br/>
                                                 </label>
 
@@ -714,15 +794,18 @@
 
                                                     <div class="i-checks">
                                                         <label>
-                                                            <input type="radio" value="0" name="s4q3"> <i></i> High</label>
+                                                            <input type="radio" value="0" name="s4q3"> <i></i>
+                                                            High</label>
                                                     </div>
                                                     <div class="i-checks">
                                                         <label>
-                                                            <input type="radio" value="1" name="s4q3"> <i></i> Medium </label>
+                                                            <input type="radio" value="1" name="s4q3"> <i></i> Medium
+                                                        </label>
                                                     </div>
                                                     <div class="i-checks">
                                                         <label>
-                                                            <input type="radio" value="2" name="s4q3"> <i></i> Low </label>
+                                                            <input type="radio" value="2" name="s4q3"> <i></i> Low
+                                                        </label>
                                                     </div>
 
                                                 </div>
@@ -730,7 +813,8 @@
                                             <div class="hr-line-dashed"></div>
 
                                             <div class="form-group">
-                                                <label class="col-sm-8">How important is expressing your own investment ideas in your investment account?
+                                                <label class="col-sm-8">How important is expressing your own investment
+                                                    ideas in your investment account?
                                                     <br/>
                                                 </label>
 
@@ -738,15 +822,18 @@
 
                                                     <div class="i-checks">
                                                         <label>
-                                                            <input type="radio" value="0" name="s4q4"> <i></i> High</label>
+                                                            <input type="radio" value="0" name="s4q4"> <i></i>
+                                                            High</label>
                                                     </div>
                                                     <div class="i-checks">
                                                         <label>
-                                                            <input type="radio" value="1" name="s4q4"> <i></i> Medium </label>
+                                                            <input type="radio" value="1" name="s4q4"> <i></i> Medium
+                                                        </label>
                                                     </div>
                                                     <div class="i-checks">
                                                         <label>
-                                                            <input type="radio" value="2" name="s4q4"> <i></i> Low </label>
+                                                            <input type="radio" value="2" name="s4q4"> <i></i> Low
+                                                        </label>
                                                     </div>
 
                                                 </div>
@@ -755,22 +842,29 @@
 
 
                                             <div class="form-group">
-                                                <label class="col-sm-8">How important is the cost of financial services to you
+                                                <label class="col-sm-8">How important is the cost of financial services
+                                                    to you
                                                     <br/>
                                                 </label>
+
                                                 <div class="col-sm-10">
 
                                                     <div class="i-checks">
                                                         <label>
-                                                            <input type="radio" value="0" name="s4q5"> <i></i> Very important. Regardless of how my investments perform, I want to pay the lowest possible cost.</label>
+                                                            <input type="radio" value="0" name="s4q5"> <i></i> Very
+                                                            important. Regardless of how my investments perform, I want
+                                                            to pay the lowest possible cost.</label>
                                                     </div>
                                                     <div class="i-checks">
                                                         <label>
-                                                            <input type="radio" value="1" name="s4q5"> <i></i>  Moderate. I am willing to pay a reasonable fees for service, but I do not believe paying more equals better performance. </label>
+                                                            <input type="radio" value="1" name="s4q5"> <i></i> Moderate.
+                                                            I am willing to pay a reasonable fees for service, but I do
+                                                            not believe paying more equals better performance. </label>
                                                     </div>
                                                     <div class="i-checks">
                                                         <label>
-                                                            <input type="radio" value="2" name="s4q5"> <i></i> Low </label>
+                                                            <input type="radio" value="2" name="s4q5"> <i></i> Low
+                                                        </label>
                                                     </div>
 
                                                 </div>
@@ -784,7 +878,8 @@
 
                                     <div class="form-group">
                                         <div class="col-sm-4 col-sm-offset-2">
-                                            <a id="submitFourthStep" class="btn btn-primary" type="submit" value="Check Form?">Submit!!</a>
+                                            <a id="submitFourthStep" class="btn btn-primary" type="submit"
+                                               value="Check Form?">Submit!!</a>
                                         </div>
                                     </div>
                                 </div>
@@ -793,52 +888,328 @@
                     </div>
                 </div>
             </div>
-        <div class="footer">
-            <div class="pull-right">
-                <strong>copyright</strong> LifVest &copy; 2015
-            </div>
-            <div>
+                </div>
+            <div id="result" class="result" style="display: none;">
+                <div class="wrapper wrapper-content animated fadeInRight">
+                    <div class="row">
 
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="ibox float-e-margins">
+                                <div class="ibox-title">
+                                    <h5>Your investment profile</h5>
+
+                                    <div ibox-tools></div>
+                                </div>
+                                <div class="ibox-content">
+                                    <div class="text-center">
+                                        <canvas id="radarChart" height="140"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="ibox float-e-margins">
+                                <div class="ibox-title">
+                                    <h5>Your recommended portfolio </h5>
+
+                                    <div ibox-tools></div>
+                                </div>
+                                <div class="ibox-content">
+                                    <div>
+                                        <canvas id="doughnutChart" height="140"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="result_PBA" style="display: none;" class="row">
+                    <div class="col-lg-12">
+                        <div class="ibox float-e-margins">
+                            <div class="ibox-title">
+                                <h5>Your recommended account type</h5>
+
+                                <div></div>
+                            </div>
+                            <div class="ibox-content">
+                                <div class="list-group">
+                                    <a class="list-group-item active" href="#">
+                                        <h3 class="list-group-item-heading">LifVest recommends a personal brokerage
+                                            account</h3>
+
+                                        <p class="list-group-item-heading">We believe you are suited for a low-cost,
+                                            do-it-yourself Fidelity brokerage account. In this account, you manage your
+                                            money personally and can buy stocks, ETFs, mutual funds, bonds, and options.
+                                            In general, LifVest recommends low-cost index funds for the majority of your
+                                            money alongside a minority allocation of single stocks.</p>
+                                    </a>
+
+                                    <a class="list-group-item" href="#">
+                                        <h3 class="list-group-item-heading">What does Fidelity charge?</h3>
+
+                                        <p class="list-group-item-heading">Brokerage accounts make money by handling
+                                            your transactions - your buys and sells. Specifically, Fidelity charges $8
+                                            per stock or ETF trade, and $50 for mutual funds. There are a number of
+                                            investment products where the transaction commission is waived (certain
+                                            iShares or Fidelity branded funds). Also, it is important to note that many
+                                            investments you buy charge a management fee -- that is, a percentage cost to
+                                            own the investment. Pay attention to the management fee for every ETF or
+                                            mutual fund you buy! Broadly speaking, a personal brokerage account is the
+                                            cheapest way to invest, but it sacrifices personal service, expert advice,
+                                            and automation. </p>
+                                    </a>
+
+                                    <a class="list-group-item" href="https://www.fidelity.com/" target="_blank">
+                                        <h3 class="list-group-item-heading">Our Recommended Advisor</h3>
+
+                                        <p class="list-group-item-heading"></p>
+
+                                        <div class="m-b-sm">
+                                            <div class="betterment-logo">
+                                                <img src="img/Fidelity_Investments_logo.svg.png" width="80%">
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="result_IFA" style="display: none;" class="row">
+                    <div class="col-lg-12">
+                        <div class="ibox float-e-margins">
+                            <div class="ibox-title">
+                                <h5>Your recommended account type</h5>
+
+                                <div></div>
+                            </div>
+                            <div class="ibox-content">
+                                <div class="list-group">
+                                    <a class="list-group-item active" href="#">
+                                        <h3 class="list-group-item-heading">LifVest recommends a personal financial
+                                            advisor</h3>
+
+                                        <p class="list-group-item-heading">We believe you are suited for a Morgan
+                                            Stanley financial advisor to manage your investments. With a financial
+                                            advisor, your investments are a constant conversation between you and your
+                                            wealth manager. Since you do not have the time or desire to manage your
+                                            money yourself, your private wealth manager will follow markets and invest
+                                            for you. One of the most valuable aspects of using a personal financial
+                                            advisor is they answer your questions about investing, while personal
+                                            brokerage accounts and robo-advisors do not.</p>
+                                    </a>
+
+                                    <a class="list-group-item" href="#">
+                                        <h3 class="list-group-item-heading">What does Morgan Stanley charge?</h3>
+
+                                        <p class="list-group-item-heading">Wealth managers make money by charging a
+                                            management fee, a percentage of your money. In addition, the brokerage
+                                            account you utilize charges commissions for transactions. The costs for
+                                            personal advisors is variable. Broadly speaking, personal financial advisors
+                                            are more costly than other options for investing, but they provide personal
+                                            service and human expertise.</p>
+                                    </a>
+
+                                    <a class="list-group-item" href="http://www.morganstanleyfa.com/locator/"
+                                       target="_blank">
+                                        <h3 class="list-group-item-heading">Our Recommended Advisor</h3>
+
+                                        <p class="list-group-item-heading"></p>
+
+                                        <div class="m-b-sm">
+                                            <div class="betterment-logo">
+                                                <img src="img/morgan_stanley_logo.png" width="80%">
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="result_RIA" style="display: none;" class="row">
+                    <div class="col-lg-12">
+                        <div class="ibox float-e-margins">
+                            <div class="ibox-title">
+                                <h5>Your recommended account type</h5>
+
+                                <div></div>
+                            </div>
+                            <div class="ibox-content">
+                                <div class="list-group">
+                                    <a class="list-group-item active" href="#">
+                                        <h3 class="list-group-item-heading">LifVest recommends a Registered Investment
+                                            Advisor</h3>
+
+                                        <p class="list-group-item-heading">We believe you are suited for a low-cost,
+                                            do-it-yourself Fidelity brokerage account. In this account, you manage your
+                                            money personally and can buy stocks, ETFs, mutual funds, bonds, and options.
+                                            In general, LifVest recommends low-cost index funds for the majority of your
+                                            money alongside a minority allocation of single stocks.</p>
+                                    </a>
+
+                                    <a class="list-group-item" href="#">
+                                        <h3 class="list-group-item-heading">What does Fidelity charge?</h3>
+
+                                        <p class="list-group-item-heading">Brokerage accounts make money by handling
+                                            your transactions - your buys and sells. Specifically, Fidelity charges $8
+                                            per stock or ETF trade, and $50 for mutual funds. There are a number of
+                                            investment products where the transaction commission is waived (certain
+                                            iShares or Fidelity branded funds). Also, it is important to note that many
+                                            investments you buy charge a management fee -- that is, a percentage cost to
+                                            own the investment. Pay attention to the management fee for every ETF or
+                                            mutual fund you buy! Broadly speaking, a personal brokerage account is the
+                                            cheapest way to invest, but it sacrifices personal service, expert advice,
+                                            and automation. </p>
+                                    </a>
+
+                                    <a class="list-group-item" href="https://www.fidelity.com/" target="_blank">
+                                        <h3 class="list-group-item-heading">Our Recommended Advisor</h3>
+
+                                        <p class="list-group-item-heading"></p>
+
+                                        <div class="m-b-sm">
+                                            <div class="betterment-logo">
+                                                <img src="img/Fidelity_Investments_logo.svg.png" width="80%">
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="result_ROBO" style="display: none;" class="row">
+                    <div class="col-lg-12">
+                        <div class="ibox float-e-margins">
+                            <div class="ibox-title">
+                                <h5>Your recommended account type</h5>
+
+                                <div></div>
+                            </div>
+                            <div class="ibox-content">
+                                <div class="list-group">
+                                    <a class="list-group-item active" href="#">
+                                        <h3 class="list-group-item-heading">LifVest recommends a robo-advisor
+                                            account</h3>
+
+                                        <p class="list-group-item-heading">We believe you are suited for a Wealthfront
+                                            robo-advisor account. In this account, your money is invested by a
+                                            third-party, Wealthfront, and is diversified into a portfolio of low-cost
+                                            index funds. Wealthfront chooses a mix of assets for you out of a menu of 11
+                                            index funds (ETFs). In addition, Wealthfront rebalances the account
+                                            periodically to maintain your investment mix. Since robo-advisors use a
+                                            formula to invest people's money, they charge lower fees than a traditional
+                                            financial advisor.</p>
+                                    </a>
+
+                                    <a class="list-group-item" href="#">
+                                        <h3 class="list-group-item-heading">What does Wealthfront charge?</h3>
+
+                                        <p class="list-group-item-heading">Robo-advisors make money by charging a
+                                            management fee, a percentage of your money. Specifically, Wealthfront
+                                            charges 0.25% a year for balances higher than $10,000. For example, if you
+                                            invested $100,000 at Wealthfront, you would pay them $225 a year ($90,000 x
+                                            0.0025 ; first $10,000 is managed for free). Also, it is important to note
+                                            that the ETFs Wealthfront buy for your account have management fees
+                                            (generally 0.05% to 0.25% a year). These fees are reflected directly in the
+                                            value of the ETFs (for a 0.05% fee, instead of getting a bill of a nickel
+                                            for every $100 you had invested in that fund, the fund's value would go from
+                                            $100 to $99.95). Broadly speaking, robo-advisor fees are some of the lowest
+                                            found in finance, but they sacrifice personal service and flexibility.</p>
+                                    </a>
+
+                                    <a class="list-group-item" href="https://www.wealthfront.com/" target="_blank">
+                                        <h3 class="list-group-item-heading">Our Recommended Advisor</h3>
+
+                                        <p class="list-group-item-heading"></p>
+
+                                        <div class="m-b-sm">
+                                            <div class="betterment-logo">
+                                                <img src="img/wealthfront_logo.png" width="100%">
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+    </div>
+    <div class="footer">
+        <div class="pull-right">
+            <strong>copyright</strong> LifVest &copy; 2015
+        </div>
+        <div>
+
         </div>
     </div>
+</div>
 
 
-        <!-- Mainly scripts -->
-        <script src="js/jquery-2.1.1.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
-        <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+<!-- Mainly scripts -->
+<script src="js/jquery-2.1.1.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+<script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
 
-        <!-- Validators? -->
-        <script src="assets/js/jquery.validate.js"></script>
-        <script src="script.js"></script>
-        <script>
-            addEventListener('load', prettyPrint, false);
-            $(document).ready(function(){
-                $('pre').addClass('prettyprint linenums');
-            });
-        </script>
+<!-- Validators? -->
+<script src="assets/js/jquery.validate.js"></script>
+<script src="script.js"></script>
+<script>
+    addEventListener('load', prettyPrint, false);
+    $(document).ready(function () {
+        $('pre').addClass('prettyprint linenums');
+    });
+</script>
 
-        <!-- Custom and plugin javascript -->
-        <script src="js/inspinia.js"></script>
-        <script src="js/plugins/pace/pace.min.js"></script>
+<!-- Custom and plugin javascript -->
+<script src="js/inspinia.js"></script>
+<script src="js/plugins/pace/pace.min.js"></script>
 
-        <!-- iCheck -->
-        <script src="js/plugins/iCheck/icheck.min.js"></script>
-        <script>
-            $(document).ready(function () {
-                $('.i-checks').iCheck({
-                    checkboxClass: 'icheckbox_square-green',
-                    radioClass: 'iradio_square-green',
-                });
-            });
-        </script>
+<!-- iCheck -->
+<script src="js/plugins/iCheck/icheck.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('.i-checks').iCheck({
+            checkboxClass: 'icheckbox_square-green',
+            radioClass: 'iradio_square-green',
+        });
+    });
+</script>
 
-        <!--Form controller js-->
-        <script src="js/demo/scoreRules.js"></script>
-        <script src="js/demo/form.js"></script>
-    </div>
+<!--Form controller js-->
+<script src="js/demo/scoreRules.js"></script>
+<script src="js/demo/form.js"></script>
+
+<!-- Flot -->
+<script src="js/plugins/flot/jquery.flot.js"></script>
+<script src="js/plugins/flot/jquery.flot.tooltip.min.js"></script>
+<script src="js/plugins/flot/jquery.flot.resize.js"></script>
+<script src="js/plugins/flot/jquery.flot.pie.js"></script>
+
+<!-- ChartJS-->
+<script src="js/plugins/chartJs/Chart.min.js"></script>
+<script src="js/demo/chartjs-demo.js"></script>
+<!--Cookies-->
+<script src="js/demo/jquery.cookie.js"></script>
+
+</div>
 </div>
 </body>
 

@@ -126,51 +126,11 @@ $(function () {
     var ctx = document.getElementById("polarChart").getContext("2d");
     var myNewChart = new Chart(ctx).PolarArea(polarData, polarOptions);
 */
-    var doughnutData = [
-        {
-            value: 20,
-            color: "#a3e1d4",
-            highlight: "#1ab394",
-            label: "Single Stocks"
-        },
-        {
-            value: 20,
-            color: "#a3e1d4",
-            highlight: "#1ab394",
-            label: "US Stock ETF"
-        },        
-        {
-            value: 20,
-            color: "#dedede",
-            highlight: "#1ab394",
-            label: "Intl Developed Stock ETF"
-        },
-        {
-            value: 20,
-            color: "#a3e1d4",
-            highlight: "#1ab394",
-            label: "Emerging Mkt Stock ETF"
-        },        
-        {
-            value: 10,
-            color: "#a3e1d4",
-            highlight: "#1ab394",
-            label: "Corporate Bond ETF"
-        },
-        {
-            value: 8,
-            color: "#b5b8cf",
-            highlight: "#1ab394",
-            label: "Govt & Muni Bond ETFs"
-        },
-        {
-            value: 2,
-            color: "#a3e1d4",
-            highlight: "#1ab394",
-            label: "Intl Bond ETF"
-        },
-    ];
 
+
+});
+
+function constructRecomandedPortfolioGraph(chart, data) {
     var doughnutOptions = {
         segmentShowStroke: true,
         segmentStrokeColor: "#fff",
@@ -180,40 +140,12 @@ $(function () {
         animationEasing: "easeOutBounce",
         animateRotate: true,
         animateScale: false,
-        responsive: true,
+        responsive: true
     };
-
-
-    var ctx = document.getElementById("doughnutChart").getContext("2d");
-    var myNewChart = new Chart(ctx).Doughnut(doughnutData, doughnutOptions);
-
-
-    var radarData = {
-        labels: ["Brokerage", "Financial advisor", "Institutional advisor", "Robo advisor"],
-        datasets: [
-            {
-                label: "My First dataset",
-                fillColor: "rgba(220,220,220,0.2)",
-                strokeColor: "rgba(220,220,220,1)",
-                pointColor: "rgba(220,220,220,1)",
-                pointStrokeColor: "#fff",
-                pointHighlightFill: "#fff",
-                pointHighlightStroke: "rgba(220,220,220,1)",
-                data: [65, 65, 65, 65]
-            },
-            {
-                label: "My Second dataset",
-                fillColor: "rgba(26,179,148,0.2)",
-                strokeColor: "rgba(26,179,148,1)",
-                pointColor: "rgba(26,179,148,1)",
-                pointStrokeColor: "#fff",
-                pointHighlightFill: "#fff",
-                pointHighlightStroke: "rgba(151,187,205,1)",
-                data: [28, 48, 40, 100]
-            }
-        ]
-    };
-
+    var ctx = document.getElementById(chart).getContext("2d");
+    var myNewChart = new Chart(ctx).Doughnut(data, doughnutOptions);
+}
+function constructRadarGraph(chart, radarData) {
     var radarOptions = {
         scaleShowLine: true,
         angleShowLineOut: true,
@@ -232,10 +164,9 @@ $(function () {
         datasetStroke: true,
         datasetStrokeWidth: 2,
         datasetFill: true,
-        responsive: true,
-    }
+        responsive: true
+    };
 
-    var ctx = document.getElementById("radarChart").getContext("2d");
+    var ctx = document.getElementById(chart).getContext("2d");
     var myNewChart = new Chart(ctx).Radar(radarData, radarOptions);
-
-});
+}

@@ -3,6 +3,7 @@
  */
 
 // TODO : need to create a helper function that store into cookies
+//function storeInCookies()
 
 //read in a form's data and convert it to a key:value object
 function getFormData(dom_query){
@@ -14,6 +15,18 @@ function getFormData(dom_query){
 		out[record.name] = record.value;
 	}
 	return out;
+}
+
+function getSuggestedAccount(score) {
+	var max = 0;
+	var suggestion = "";
+	$.each(score, function(index, value) {
+		if(value >= max) {
+			max = value;
+			suggestion = index;
+		}
+	});
+	return suggestion;
 }
 
 function calculateTotal(object, score) {
@@ -30,10 +43,10 @@ function calculateTotal(object, score) {
 $(function() {
 	// score object
 	var score = {
-		robo: 0,
-		brokerage: 0,
+		ria: 0,
 		fa: 0,
-		ria: 0
+		robo: 0,
+		brokerage: 0
 	};
 
 	// form blocks
@@ -72,7 +85,62 @@ $(function() {
 		calculateTotal(getFormData($("form.form_basic4")), score);
         console.debug(getFormData($("form.form_basic4")));
         console.debug(score);
-		
+		$(".form").fadeOut();
+		$(".result").fadeIn();
+
+		var radarData = {
+			labels: ["Brokerage", "Financial advisor", "Institutional advisor", "Robo advisor"],
+			datasets: [
+				{
+					label: "My First dataset",
+					fillColor: "rgba(220,220,220,0.2)",
+					strokeColor: "rgba(220,220,220,1)",
+					pointColor: "rgba(220,220,220,1)",
+					pointStrokeColor: "#fff",
+					pointHighlightFill: "#fff",
+					pointHighlightStroke: "rgba(220,220,220,1)",
+					data: [score.brokerage, score.fa, score.ria, score.robo]
+				}
+			]
+		};
+		constructRadarGraph("radarChart", radarData);
+
+		var doughnutData = [
+			{
+				value: 70,
+				color: "#a3e1d4",
+				highlight: "#1ab394",
+				label: "Stocks"
+			},
+			{
+				value: 20,
+				color: "#dedede",
+				highlight: "#1ab394",
+				label: "Cash"
+			},
+			{
+				value: 10,
+				color: "#b5b8cf",
+				highlight: "#1ab394",
+				label: "Bonds"
+			}
+		];
+		constructRecomandedPortfolioGraph("doughnutChart", doughnutData);
+		// redirection after submit
+		switch(getSuggestedAccount(score)) {
+			case "robo":
+					$("#result_ROBO").fadeIn();
+				break;
+			case "ria":
+				$("#result_RIA").fadeIn();
+				break;
+			case "brokerage":
+				$("#result_PBA").fadeIn();
+				break;
+			case "fa":
+				$("#result_IFA").fadeIn();
+				break;
+		}
 	};
 
 	// buttons event triggering
