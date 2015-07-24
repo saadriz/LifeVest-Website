@@ -128,23 +128,47 @@ $(function () {
 */
     var doughnutData = [
         {
-            value: 70,
+            value: 20,
             color: "#a3e1d4",
             highlight: "#1ab394",
-            label: "Stocks"
+            label: "Single Stocks"
         },
+        {
+            value: 20,
+            color: "#a3e1d4",
+            highlight: "#1ab394",
+            label: "US Stock ETF"
+        },        
         {
             value: 20,
             color: "#dedede",
             highlight: "#1ab394",
-            label: "Cash"
+            label: "Intl Developed Stock ETF"
         },
         {
+            value: 20,
+            color: "#a3e1d4",
+            highlight: "#1ab394",
+            label: "Emerging Mkt Stock ETF"
+        },        
+        {
             value: 10,
+            color: "#a3e1d4",
+            highlight: "#1ab394",
+            label: "Corporate Bond ETF"
+        },
+        {
+            value: 8,
             color: "#b5b8cf",
             highlight: "#1ab394",
-            label: "Bonds"
-        }
+            label: "Govt & Muni Bond ETFs"
+        },
+        {
+            value: 2,
+            color: "#a3e1d4",
+            highlight: "#1ab394",
+            label: "Intl Bond ETF"
+        },
     ];
 
     var doughnutOptions = {
