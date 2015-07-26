@@ -78,7 +78,7 @@ $(function () {
         barValueSpacing: 5,
         barDatasetSpacing: 1,
         responsive: true,
-    }
+    };
 
 /*
     var ctx = document.getElementById("barChart").getContext("2d");
