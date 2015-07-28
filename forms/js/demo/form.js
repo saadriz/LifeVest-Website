@@ -2,6 +2,22 @@
  * Created by Marwen on 20/07/2015.
  */
 
+function _calculateAge(birthday) { // birthday is a date
+	var ageDifMs = Date.now() - birthday.getTime();
+	var ageDate = new Date(ageDifMs); // miliseconds from epoch
+	return Math.abs(ageDate.getUTCFullYear() - 1970);
+}
+
+function getAgeInterval(age) {
+	var result = "";
+	$.each(keyValueMapping, function(index, value) {
+		if(age >= value.min && age <= value.max) {
+			result = index;
+		}
+	});
+	return result;
+}
+
 //read in a form's data and convert it to a key:value object
 function getFormData(dom_query) {
 	var out = {};
@@ -67,6 +83,7 @@ $(function () {
 	var user = {
 
 	};
+	var urlServer = "http://localhost:3000";
 
 	// form blocks
 	var form_basic = $("#form_basic");
@@ -80,8 +97,10 @@ $(function () {
 	// get user information and store it in cookies
 	var submitFirstStep = function () {
 		user = getFormData($("form.form_basic"));
+		user.birth_date =  user.year + "-" + user.month + "-" + user.day;
+		user.year_of_birth = user.year;
 		$.ajax({
-			url: "http://localhost:3000/user",
+			url: urlServer + "/user",
 			data: user,
 			crossDomain: true,
 			dataType: "json",
@@ -110,7 +129,7 @@ $(function () {
 		var answers = [];
 		prepareAnswer(tmpAnswers, answers);
 		$.ajax({
-			url: "http://localhost:3000/send-answers",
+			url: urlServer + "/send-answers",
 			data:{
 				"id": user._id,
 				"answers":  JSON.stringify(answers),
@@ -133,7 +152,7 @@ $(function () {
 		var answers = [];
 		prepareAnswer(tmpAnswers, answers);
 		$.ajax({
-			url: "http://localhost:3000/send-answers",
+			url: urlServer + "/send-answers",
 			data:{
 				"id": user._id,
 				"answers":  JSON.stringify(answers),
@@ -157,7 +176,7 @@ $(function () {
 		var answers = [];
 		prepareAnswer(tmpAnswers, answers);
 		$.ajax({
-			url: "http://localhost:3000/send-answers",
+			url: urlServer + "/send-answers",
 			data:{
 				"id": user._id,
 				"answers":  JSON.stringify(answers),
@@ -186,24 +205,51 @@ $(function () {
 			};
 			constructRadarGraph("radarChart", radarData);
 
+			// age calculation
+			var age = _calculateAge(new Date(user.birth_date));
+			var interval = getAgeInterval(age);
 			var doughnutData = [
 				{
-					value: 70,
-					color: "#a3e1d4",
+					value: allocationRules[interval]["Single Stocks"],
+					color: "#7FD4FF",
 					highlight: "#1ab394",
-					label: "Stocks"
+					label: "Single Stocks"
 				},
 				{
-					value: 20,
-					color: "#dedede",
+					value: allocationRules[interval]["US Stock ETFs"],
+					color: "#FFAAAA",
 					highlight: "#1ab394",
-					label: "Cash"
+					label: "US Stock ETFs"
 				},
 				{
-					value: 10,
-					color: "#b5b8cf",
+					value: allocationRules[interval]["Intl Developed Markets ETFs"],
+					color: "#FF2AD4",
 					highlight: "#1ab394",
-					label: "Bonds"
+					label: "Intl Developed Markets ETFs"
+				},
+				{
+					value: allocationRules[interval]["Emerging Markets Stock ETFs"],
+					color: "#7FFF2A",
+					highlight: "#1ab394",
+					label: "Emerging Markets Stock ETFs"
+				},
+				{
+					value: allocationRules[interval]["Corporate Bond ETFs"],
+					color: "#7F55FF",
+					highlight: "#1ab394",
+					label: "Corporate Bond ETFs"
+				},
+				{
+					value: allocationRules[interval]["Govt and Municipal Bond ETFs"],
+					color: "#AA00FF",
+					highlight: "#1ab394",
+					label: "Govt and Municipal Bond ETFs"
+				},
+				{
+					value: allocationRules[interval]["Intl Bond ETFs"],
+					color: "#D400FF",
+					highlight: "#1ab394",
+					label: "Intl Bond ETFs"
 				}
 			];
 			constructRecomandedPortfolioGraph("doughnutChart", doughnutData);
@@ -232,4 +278,55 @@ $(function () {
 	$("#submitSecondStep").click(submitSecondStep);
 	$("#submitThirdStep").click(submitThirdStep);
 	$("#submitFourthStep").click(submitFourthStep);
+});
+
+
+// Helper function generates html options for days, months and years dropdowns
+function getBirthdayOptions(type, maxYear, shiftYear) {
+	var html = '';
+	if(!maxYear) {
+		maxYear = 60;
+	}
+	if(!shiftYear) {
+		shiftYear = 0;
+	}
+
+	switch (type) {
+		case 'days':
+			for (var i = 1; i < 32; i++) {
+				html += '<option value="' + (i) + '">' + i + '</option>';
+			}
+			break;
+		case 'months':
+			var theMonths = new Array("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "Derember");
+			for (var i = 0; i < 12; i++) {
+				html += '<option value="' + (i+1) + '">' + theMonths[i] + '</option>';
+			}
+			break;
+		case 'years':
+			var currYear = new Date().getFullYear() - shiftYear;
+			var startYear = new Date().getFullYear() - maxYear;
+
+			while ( currYear >= startYear ) {
+				html += '<option value="' + currYear + '">' + currYear + '</option>';
+				currYear--;
+			}
+			break;
+	}
+
+	return html;
+}
+
+// Usage Example, with jQuery
+$(document).ready(function () {
+	$('#birthdate').html(
+		'<select name="month" class="first form-control m-b">' +
+		'<option value="" disabled="disabled" selected="selected">Month</option>' + getBirthdayOptions('months') +
+		'</select>' +
+		'<select name="day" class=" form-control m-b">' +
+		'<option value="" disabled="disabled" selected="selected">Day</option>' + getBirthdayOptions('days') +
+		'</select>' +
+		'<select name="year" class="form-control m-b">' +
+		'<option value="" disabled="disabled" selected="selected">Year</option>' + getBirthdayOptions('years') +
+		'</select>');
 });
