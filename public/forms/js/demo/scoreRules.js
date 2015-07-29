@@ -32,11 +32,11 @@ var scoreRules = {
         {robo: 3,brokerage: 0,fa: 2,ria: 2, textValue: "Very low"}
     ],    
     s3q1: [
-        {robo: 2,brokerage: 2,fa: 0,ria: 1, textValue: "Daily"},
-        {robo: 1,brokerage: 2,fa: 0,ria: 1, textValue: "2-3 times a week"},
+        {robo: 0,brokerage: 1,fa: 0,ria: 0, textValue: "Daily"},
+        {robo: 0,brokerage: 1,fa: 0,ria: 0, textValue: "2-3 times a week"},
         {robo: 1,brokerage: 1,fa: 1,ria: 1, textValue: "Weekly"},
-        {robo: 1,brokerage: 1,fa: 2,ria: 2, textValue: "A few times a month"},
-        {robo: 1,brokerage: 0,fa: 2,ria: 2, textValue: "Monthly"}
+        {robo: 1,brokerage: 0,fa: 1,ria: 1, textValue: "A few times a month"},
+        {robo: 1,brokerage: 0,fa: 1,ria: 1, textValue: "Monthly"}
     ],
     s3q2: [
         {robo: 3,brokerage: 0,fa: 0,ria: 0, textValue: "$0 - $2,500"},
@@ -47,21 +47,21 @@ var scoreRules = {
         {robo: 1,brokerage: 2,fa: 3,ria: 3, textValue: "More than $250,000"}
     ],
     s3q3: [
-        {robo: 0,brokerage: 2,fa: 0,ria: 0, textValue: "Very high"},
-        {robo: 0,brokerage: 2,fa: 2,ria: 2, textValue: "High"},
-        {robo: 1,brokerage: 1,fa: 2,ria: 2, textValue: "Average"},
-        {robo: 2,brokerage: 1,fa: 1,ria: 1, textValue: "Low"},
-        {robo: 2,brokerage: 0,fa: 0,ria: 0, textValue: "Very low"}
+        {robo: 2,brokerage: 2,fa: 0,ria: 1, textValue: "Very high"},
+        {robo: 1,brokerage: 2,fa: 0,ria: 1, textValue: "High"},
+        {robo: 1,brokerage: 1,fa: 1,ria: 1, textValue: "Average"},
+        {robo: 1,brokerage: 1,fa: 1,ria: 2, textValue: "Low"},
+        {robo: 1,brokerage: 0,fa: 2,ria: 2, textValue: "Very low"}
     ],
     s3q4: [
-        {robo: 0,brokerage: 1,fa: 0,ria: 0, textValue: "0 to 5%"},
-        {robo: 0,brokerage: 1,fa: 0,ria: 0, textValue: "5 to 15%"},
-        {robo: 1,brokerage: 1,fa: 1,ria: 1, textValue: "15 to 25%"},
-        {robo: 1,brokerage: 0,fa: 1,ria: 1, textValue: "25 to 50%"},
-        {robo: 1,brokerage: 0,fa: 1,ria: 1, textValue: "More than"}
+        {robo: 0,brokerage: 2,fa: 0,ria: 0, textValue: "0 to 5%"},
+        {robo: 0,brokerage: 2,fa: 2,ria: 2, textValue: "5 to 15%"},
+        {robo: 1,brokerage: 1,fa: 2,ria: 2, textValue: "15 to 25%"},
+        {robo: 2,brokerage: 1,fa: 1,ria: 1, textValue: "25 to 50%"},
+        {robo: 2,brokerage: 0,fa: 0,ria: 0, textValue: "More than"}
     ],
     s3q5: [
-        {robo: 0,brokerage: 2,fa: 2,ria: 0, textValue: "Intra-month"},
+        {robo: 0,brokerage: 2,fa: 0,ria: 0, textValue: "Intra-month"},
         {robo: 0,brokerage: 2,fa: 1,ria: 1, textValue: "1 month"},
         {robo: 0,brokerage: 2,fa: 2,ria: 2, textValue: "6 months"},
         {robo: 1,brokerage: 2,fa: 2,ria: 2, textValue: "1 year"},
