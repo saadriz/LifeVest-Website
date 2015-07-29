@@ -83,7 +83,7 @@ $(function () {
 	var user = {
 
 	};
-	var urlServer = "https://localhost:3000";
+	var urlServer = "";
 
 	// form blocks
 	var form_basic = $("#form_basic");
