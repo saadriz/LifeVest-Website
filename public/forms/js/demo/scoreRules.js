@@ -85,13 +85,13 @@ var scoreRules = {
         {robo: 2,brokerage: 0,fa: 0,ria: 0, textValue: "Low"}
     ],    
     s4q4: [
-        {robo: 1,brokerage: 3,fa: 0,ria: 2, textValue: "High"},
-        {robo: 2,brokerage: 1,fa: 1,ria: 1, textValue: "Medium"},
-        {robo: 0,brokerage: 0,fa: 3,ria: 2, textValue: "Low"}
+        {robo: 0,brokerage: 2,fa: 1,ria: 0, textValue: "High"},
+        {robo: 0,brokerage: 1,fa: 2,ria: 0, textValue: "Medium"},
+        {robo: 3,brokerage: 0,fa: 0,ria: 3, textValue: "Low"}
     ],    
     s4q5: [
-        {robo: 0,brokerage: 2,fa: 1,ria: 0, textValue: "Very important. Regardless of how my investments perform, I want  to pay the lowest possible cost."},
-        {robo: 0,brokerage: 1,fa: 2,ria: 0, textValue: "Moderate. I am willing to pay a reasonable fees for service, but I do not believe paying more equals better performance."},
-        {robo: 3,brokerage: 0,fa: 0,ria: 3, textValue: "Low"}
+        {robo: 1,brokerage: 3,fa: 0,ria: 0, textValue: "Very important. Regardless of how my investments perform, I want  to pay the lowest possible cost."},
+        {robo: 2,brokerage: 1,fa: 1,ria: 1, textValue: "Moderate. I am willing to pay a reasonable fees for service, but I do not believe paying more equals better performance."},
+        {robo: 0,brokerage: 0,fa: 3,ria: 2, textValue: "Less important. I am willing to pay more for the potential of better advice and performance."}
     ] 
 };
