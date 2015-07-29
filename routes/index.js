@@ -11,7 +11,6 @@ router.post('/user', function (req, res) {
 		if (err) {
 			return console.log("Error insertion user.");
 		} else {
-			res.header("Access-Control-Allow-Origin", "*");
 			return res.json(user);
 		}
 	});
@@ -31,11 +30,8 @@ router.post('/send-answers', function (req, res) {
 			if (err && !user) {
 				return console.log("No user find.");
 			} else {
-				res.header("Access-Control-Allow-Origin", "*");
 				user.answers = user.answers.concat(answers);
-
 				console.log(answers);
-
 				user.total_score = total_score;
 				user.save(function(err, user) {
 					if(err) {

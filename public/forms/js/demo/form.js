@@ -100,7 +100,7 @@ $(function () {
 		user.birth_date =  user.year + "-" + user.month + "-" + user.day;
 		user.year_of_birth = user.year;
 		$.ajax({
-			url: urlServer + "/user",
+			url: urlServer + "/user/",
 			data: user,
 			crossDomain: true,
 			dataType: "json",
@@ -129,7 +129,7 @@ $(function () {
 		var answers = [];
 		prepareAnswer(tmpAnswers, answers);
 		$.ajax({
-			url: urlServer + "/send-answers",
+			url: urlServer + "/send-answers/",
 			data:{
 				"id": user._id,
 				"answers":  JSON.stringify(answers),
@@ -152,7 +152,7 @@ $(function () {
 		var answers = [];
 		prepareAnswer(tmpAnswers, answers);
 		$.ajax({
-			url: urlServer + "/send-answers",
+			url: urlServer + "/send-answers/",
 			data:{
 				"id": user._id,
 				"answers":  JSON.stringify(answers),
@@ -176,7 +176,7 @@ $(function () {
 		var answers = [];
 		prepareAnswer(tmpAnswers, answers);
 		$.ajax({
-			url: urlServer + "/send-answers",
+			url: urlServer + "/send-answers/",
 			data:{
 				"id": user._id,
 				"answers":  JSON.stringify(answers),
