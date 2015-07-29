@@ -27,7 +27,7 @@ router.post('/send-answers', function (req, res) {
 
 	User.findOne({_id: id})
 		.exec(function (err, user) {
-			if (err && !user) {
+			if (err && user == null) {
 				return console.log("No user find.");
 			} else {
 				user.answers = user.answers.concat(answers);
