@@ -193,12 +193,12 @@ $(function () {
 				datasets: [
 					{
 						label: "My First dataset",
-						fillColor: "rgba(220,220,220,0.2)",
-						strokeColor: "rgba(220,220,220,1)",
-						pointColor: "rgba(220,220,220,1)",
-						pointStrokeColor: "#fff",
-						pointHighlightFill: "#fff",
-						pointHighlightStroke: "rgba(220,220,220,1)",
+						fillColor: "rgba(26,179,148,0.2)",
+                		strokeColor: "rgba(26,179,148,1)",
+                		pointColor: "rgba(26,179,148,1)",
+                		pointStrokeColor: "#fff",
+                		pointHighlightFill: "#fff",
+                		pointHighlightStroke: "rgba(151,187,205,1)",
 						data: [score.brokerage, score.fa, score.ria, score.robo]
 					}
 				]
