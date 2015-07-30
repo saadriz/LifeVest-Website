@@ -272,7 +272,7 @@ h1 {
   text-transform: uppercase;
 }
 .features-block {
-  margin-top: 40px;
+  margin-top: 10px;
 }
 .features-text {
   margin-top: 40px;
@@ -882,7 +882,7 @@ section.comments {
 }
 .vertical-timeline-block {
   position: relative;
-  margin: 2em 0;
+  margin: 0em 0;
 }
 .vertical-timeline-block:after {
   content: "";
@@ -897,7 +897,7 @@ section.comments {
 }
 @media only screen and (min-width: 1170px) {
   .center-orientation .vertical-timeline-block {
-    margin: 4em 0;
+    margin: 0em 0;
   }
   .center-orientation .vertical-timeline-block:first-child {
     margin-top: 0;
