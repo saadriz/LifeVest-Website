@@ -155,7 +155,7 @@ function constructRadarGraph(chart, radarData) {
         angleLineWidth: 1,
         pointLabelFontFamily: "'Arial'",
         pointLabelFontStyle: "normal",
-        pointLabelFontSize: 10,
+        pointLabelFontSize: 16,
         pointLabelFontColor: "#666",
         pointDot: true,
         pointDotRadius: 3,
