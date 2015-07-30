@@ -198,43 +198,43 @@ $(function () {
 			var doughnutData = [
 				{
 					value: allocationRules[interval]["Single Stocks"],
-					color: "#7FD4FF",
+					color: "#ce697e",
 					highlight: "#1ab394",
 					label: "Single Stocks"
 				},
 				{
 					value: allocationRules[interval]["US Stock ETFs"],
-					color: "#FFAAAA",
+					color: "#e1a3b0",
 					highlight: "#1ab394",
 					label: "US Stock ETFs"
 				},
 				{
 					value: allocationRules[interval]["Intl Developed Markets ETFs"],
-					color: "#FF2AD4",
+					color: "#d4a3e1",
 					highlight: "#1ab394",
 					label: "Intl Developed Markets ETFs"
 				},
 				{
 					value: allocationRules[interval]["Emerging Markets Stock ETFs"],
-					color: "#7FFF2A",
+					color: "#d4a3e1",
 					highlight: "#1ab394",
 					label: "Emerging Markets Stock ETFs"
 				},
 				{
 					value: allocationRules[interval]["Corporate Bond ETFs"],
-					color: "#7F55FF",
+					color: "#b5b8cf",
 					highlight: "#1ab394",
 					label: "Corporate Bond ETFs"
 				},
 				{
 					value: allocationRules[interval]["Govt and Municipal Bond ETFs"],
-					color: "#AA00FF",
+					color: "#dedede",
 					highlight: "#1ab394",
 					label: "Govt and Municipal Bond ETFs"
 				},
 				{
 					value: allocationRules[interval]["Intl Bond ETFs"],
-					color: "#D400FF",
+					color: "#a3e1d4",
 					highlight: "#1ab394",
 					label: "Intl Bond ETFs"
 				}
