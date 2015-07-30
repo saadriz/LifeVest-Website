@@ -175,7 +175,7 @@ $(function () {
 			$(".form").fadeOut();
 			$(".result").fadeIn();
 			var radarData = {
-				labels: ["Brokerage", "Financial advisor", "Institutional advisor", "Robo advisor"],
+				labels: ["Brokerage", "Institutional FA", "RIA", "Robo-Advisor"],
 				datasets: [
 					{
 						label: "My First dataset",
