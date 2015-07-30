@@ -24,7 +24,6 @@ router.post('/send-answers', function (req, res) {
 	var answers = JSON.parse(req.body.answers);
 	var total_score = req.body.total_score;
 	console.log(req.body);
-
 	User.findOne({_id: id})
 		.exec(function (err, user) {
 			if (err && user == null) {

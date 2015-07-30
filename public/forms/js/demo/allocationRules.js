@@ -31,13 +31,13 @@ var keyValueMapping = {
 		min: 53,
 		max: 57
 	},
-	"58-62": {
+	"58-63": {
 		min: 58,
-		max: 62
+		max: 63
 	},
-	"63+": {
-		min: 63,
-		max: -1
+	"64+": {
+		min: 64,
+		max: 150
 	}
 };
 

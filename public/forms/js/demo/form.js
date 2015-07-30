@@ -2,8 +2,8 @@
  * Created by Marwen on 20/07/2015.
  */
 
-function _calculateAge(birthday) { // birthday is a date
-	var ageDifMs = Date.now() - birthday.getTime();
+function _calculateAge(year_of_birth) { // birthday is a date
+	var ageDifMs = Date.now() - new Date(year_of_birth).getTime();
 	var ageDate = new Date(ageDifMs); // miliseconds from epoch
 	return Math.abs(ageDate.getUTCFullYear() - 1970);
 }
@@ -97,12 +97,10 @@ $(function () {
 	// get user information and store it in cookies
 	var submitFirstStep = function () {
 		user = getFormData($("form.form_basic"));
-		user.birth_date =  user.year + "-" + user.month + "-" + user.day;
 		user.year_of_birth = user.year;
 		$.ajax({
 			url: urlServer + "/user/",
 			data: user,
-			crossDomain: true,
 			dataType: "json",
 			method: "POST"
 		}).success(function (res) {
@@ -115,15 +113,6 @@ $(function () {
 	};
 	// get the first form answers and store them in cookies
 	var submitSecondStep = function () {
-
-		//[
-		//	{
-		//		"related_question": "s1q1",
-		//		"value":0,
-		//		"text_value": "LOW"
-		//	}
-		//]
-
 		calculateTotal(getFormData($("form.form_basic2")), score);
 		var tmpAnswers = getFormData($("form.form_basic2"));
 		var answers = [];
@@ -135,7 +124,6 @@ $(function () {
 				"answers":  JSON.stringify(answers),
 				"total_score": calculateTotalScoreForAllCategories(score)
 			},
-			crossDomain: true,
 			dataType: "json",
 			method: "POST"
 		}).success(function (res) {
@@ -158,7 +146,6 @@ $(function () {
 				"answers":  JSON.stringify(answers),
 				"total_score": calculateTotalScoreForAllCategories(score)
 			},
-			crossDomain: true,
 			dataType: "json",
 			method: "POST"
 		}).success(function (res) {
@@ -182,7 +169,6 @@ $(function () {
 				"answers":  JSON.stringify(answers),
 				"total_score": calculateTotalScoreForAllCategories(score)
 			},
-			crossDomain: true,
 			dataType: "json",
 			method: "POST"
 		}).success(function (res) {
@@ -206,7 +192,8 @@ $(function () {
 			constructRadarGraph("radarChart", radarData);
 
 			// age calculation
-			var age = _calculateAge(new Date(user.birth_date));
+			var age = _calculateAge(user.year_of_birth);
+			console.debug(age);
 			var interval = getAgeInterval(age);
 			var doughnutData = [
 				{
@@ -272,7 +259,6 @@ $(function () {
 			console.error("Error inserting user informations.")
 		});
 	};
-
 	// buttons event triggering
 	$("#submitFirstStep").click(submitFirstStep);
 	$("#submitSecondStep").click(submitSecondStep);
@@ -280,12 +266,11 @@ $(function () {
 	$("#submitFourthStep").click(submitFourthStep);
 });
 
-
 // Helper function generates html options for days, months and years dropdowns
 function getBirthdayOptions(type, maxYear, shiftYear) {
 	var html = '';
 	if(!maxYear) {
-		maxYear = 60;
+		maxYear = 85;
 	}
 	if(!shiftYear) {
 		shiftYear = 0;
@@ -313,19 +298,12 @@ function getBirthdayOptions(type, maxYear, shiftYear) {
 			}
 			break;
 	}
-
 	return html;
 }
 
 // Usage Example, with jQuery
 $(document).ready(function () {
 	$('#birthdate').html(
-		'<select name="month" class="first form-control m-b">' +
-		'<option value="" disabled="disabled" selected="selected">Month</option>' + getBirthdayOptions('months') +
-		'</select>' +
-		'<select name="day" class=" form-control m-b">' +
-		'<option value="" disabled="disabled" selected="selected">Day</option>' + getBirthdayOptions('days') +
-		'</select>' +
 		'<select name="year" class="form-control m-b">' +
 		'<option value="" disabled="disabled" selected="selected">Year</option>' + getBirthdayOptions('years') +
 		'</select>');

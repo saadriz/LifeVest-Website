@@ -35,7 +35,9 @@ app.use(function(req, res, next) {
  *  DB CONFIG
  */
 
-var connection = mongoose.connect("mongodb://marwen:marwen@ds049160.mongolab.com:49160/heroku_3mf91mkz");
+var connection = mongoose.connect("mongodb://localhost:27017/lifevest");
+
+//var connection = mongoose.connect("mongodb://marwen:marwen@ds049160.mongolab.com:49160/heroku_3mf91mkz");
 mongoose.set('debug', true);
 
 // error handlers
