@@ -210,7 +210,7 @@ $(function () {
 				},
 				{
 					value: allocationRules[interval]["Intl Developed Markets ETFs"],
-					color: "#d4a3e1",
+					color: "#ffc04d",
 					highlight: "#1ab394",
 					label: "Intl Developed Markets ETFs"
 				},
