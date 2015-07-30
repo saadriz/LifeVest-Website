@@ -22,11 +22,9 @@ var UserSchema = new Schema({
 	email: {
 		type: String
 	},
-	birth_date: {
-		type: String
-	},
 	year_of_birth: {
-		type: String
+		type: String,
+		required: true
 	},
 	sexe: {
 		type: String

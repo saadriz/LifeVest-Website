@@ -1,4 +1,4 @@
-var express = require('express');
+ var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
@@ -38,6 +38,7 @@ app.use(function(req, res, next) {
 //var connection = mongoose.connect("mongodb://localhost:27017/lifevest");
 
 var connection = mongoose.connect("mongodb://marwen:marwen@ds049160.mongolab.com:49160/heroku_3mf91mkz");
+
 mongoose.set('debug', true);
 
 // error handlers

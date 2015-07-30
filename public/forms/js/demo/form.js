@@ -98,18 +98,42 @@ $(function () {
 	var submitFirstStep = function () {
 		user = getFormData($("form.form_basic"));
 		user.year_of_birth = user.year;
-		$.ajax({
-			url: urlServer + "/user/",
-			data: user,
-			dataType: "json",
-			method: "POST"
-		}).success(function (res) {
-			user._id = res._id;
-			form_basic.fadeOut();
-			form_basic2.fadeIn();
-		}).error(function (res) {
-			console.error("Error inserting user informations.")
+		console.debug(user.year);
+		$("#ss-form").validate({
+			rules: {
+				email: {
+					required: true,
+					email: true
+				},
+				year: {
+					required: true
+				}
+			},
+			messages: {
+				email: {
+					required: "Please enter a valid e-mail address",
+					email: "Please enter a valid e-mail address"
+				},
+				year: {
+					required: "Please select your year of birth"
+				}
+			}
 		});
+		if($("#ss-form").valid()) {
+			$.ajax({
+				url: urlServer + "/user/",
+				data: user,
+				dataType: "json",
+				method: "POST"
+			}).success(function (res) {
+				user._id = res._id;
+				form_basic.fadeOut();
+				form_basic2.fadeIn();
+				window.scrollTo(0, 0);
+			}).error(function (res) {
+				console.error("Error inserting user informations.")
+			});
+		}
 	};
 	// get the first form answers and store them in cookies
 	var submitSecondStep = function () {
@@ -129,6 +153,7 @@ $(function () {
 		}).success(function (res) {
 			form_basic2.fadeOut();
 			form_basic3.fadeIn();
+			window.scrollTo(0, 0);
 		}).error(function (res) {
 			console.error("Error inserting user informations.")
 		});
@@ -151,6 +176,7 @@ $(function () {
 		}).success(function (res) {
 			form_basic3.fadeOut();
 			form_basic4.fadeIn();
+			window.scrollTo(0, 0);
 		}).error(function (res) {
 			console.error("Error inserting user informations.")
 		});
@@ -174,6 +200,7 @@ $(function () {
 		}).success(function (res) {
 			$(".form").fadeOut();
 			$(".result").fadeIn();
+			window.scrollTo(0, 0);
 			var radarData = {
 				labels: ["Brokerage", "Institutional FA", "RIA", "Robo-Advisor"],
 				datasets: [
