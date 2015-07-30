@@ -373,7 +373,7 @@ li.pricing-title {
   background-image: url('../img/word_map.png');
   background-position: 50% 50%;
   background-repeat: no-repeat;
-  margin-top: 60px;
+  margin-top: 10px;
 }
 /* Buttons - only primary custom button
 ------------------------- */
@@ -867,8 +867,8 @@ section.comments {
 }
 @media only screen and (min-width: 1170px) {
   #vertical-timeline.center-orientation {
-    margin-top: 3em;
-    margin-bottom: 3em;
+    margin-top: 1em;
+    margin-bottom: 1em;
   }
   #vertical-timeline.center-orientation:before {
     left: 50%;
