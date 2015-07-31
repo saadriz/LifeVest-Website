@@ -22,7 +22,7 @@ router.post('/user', function (req, res) {
 router.post('/send-answers', function (req, res) {
 	var id = req.body.id;
 	var answers = JSON.parse(req.body.answers);
-	var total_score = req.body.total_score;
+	var score = JSON.parse(req.body.score);
 	console.log(req.body);
 	User.findOne({_id: id})
 		.exec(function (err, user) {
@@ -31,7 +31,7 @@ router.post('/send-answers', function (req, res) {
 			} else {
 				user.answers = user.answers.concat(answers);
 				console.log(answers);
-				user.total_score = total_score;
+				user.score = score;
 				user.save(function(err, user) {
 					if(err) {
 						return console.log(err);

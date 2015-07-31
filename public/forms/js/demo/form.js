@@ -146,7 +146,14 @@ $(function () {
 			data:{
 				"id": user._id,
 				"answers":  JSON.stringify(answers),
-				"total_score": calculateTotalScoreForAllCategories(score)
+				"score":  JSON.stringify({
+					total: calculateTotalScoreForAllCategories(score),
+					brokerage: score.brokerage,
+					ria: score.ria,
+					fa: score.fa,
+					robo: score.robo,
+					result: getSuggestedAccount(score)
+				})
 			},
 			dataType: "json",
 			method: "POST"
@@ -169,7 +176,14 @@ $(function () {
 			data:{
 				"id": user._id,
 				"answers":  JSON.stringify(answers),
-				"total_score": calculateTotalScoreForAllCategories(score)
+				"score":  JSON.stringify({
+					total: calculateTotalScoreForAllCategories(score),
+					brokerage: score.brokerage,
+					ria: score.ria,
+					fa: score.fa,
+					robo: score.robo,
+					result: getSuggestedAccount(score)
+				})
 			},
 			dataType: "json",
 			method: "POST"
@@ -193,7 +207,14 @@ $(function () {
 			data:{
 				"id": user._id,
 				"answers":  JSON.stringify(answers),
-				"total_score": calculateTotalScoreForAllCategories(score)
+				"score": JSON.stringify({
+					total: calculateTotalScoreForAllCategories(score),
+					brokerage: score.brokerage,
+					ria: score.ria,
+					fa: score.fa,
+					robo: score.robo,
+					result: getSuggestedAccount(score)
+				})
 			},
 			dataType: "json",
 			method: "POST"

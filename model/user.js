@@ -32,9 +32,30 @@ var UserSchema = new Schema({
 	answers : {
 		type: [AnswerSchema]
 	},
-	total_score: {
-		type: Number,
-		default: 0
+	score: {
+		total: {
+			type: Number,
+			default: 0
+		},
+		robo: {
+			type: Number,
+			default: 0
+		},
+		brokerage: {
+			type: Number,
+			default: 0
+		},
+		fa: {
+			type: Number,
+			default: 0
+		},
+		ria: {
+			type: Number,
+			default: 0
+		},
+		result: {
+			type: String
+		}
 	}
 });
 
