@@ -1,7 +1,6 @@
 var express = require('express');
 var router = express.Router();
 var User = require("../model/user.js").User;
-var EarlyAccessUser = require("../model/earlyAccessUsers.js").User;
 
 /**
  * Store the user data and return the id
@@ -33,8 +32,8 @@ router.post('/send-answers', function (req, res) {
 				user.answers = user.answers.concat(answers);
 				console.log(answers);
 				user.score = score;
-				user.save(function (err, user) {
-					if (err) {
+				user.save(function(err, user) {
+					if(err) {
 						return console.log(err);
 					} else {
 						return res.json(user);
@@ -42,20 +41,6 @@ router.post('/send-answers', function (req, res) {
 				});
 			}
 		});
-});
-
-/**
- * Subscribe user early access
- */
-router.post('/early-access', function (req, res) {
-	var entry = req.body;
-	EarlyAccessUser.create(entry, function (err, user) {
-		if (err) {
-			return console.log("Error insertion user.");
-		} else {
-			return res.json(user);
-		}
-	});
 });
 
 /* export all routes */
