@@ -1,0 +1,743 @@
+extends layout
+
+block content
+   body.top-navigation
+      #wrapper
+         #page-wrapper.gray-bg
+            .row.border-bottom
+               nav.navbar.navbar-static-top(role='navigation')
+                  .navbar-header
+                     button.navbar-toggle.collapsed(aria-controls='navbar', aria-expanded='false', data-target='#navbar', data-toggle='collapse', type='button')
+                        i.fa.fa-reorder
+                     a.navbar-brand(href='/') Lifvest
+                  #navbar.navbar-collapse.collapse
+                     ul.nav.navbar-nav
+                        li.active
+                           a(aria-expanded='false', role='button', href='') Start investing
+                     ul.nav.navbar-top-links.navbar-right
+                        li
+            .row.wrapper.border-bottom.white-bg.page-heading.form
+               .col-lg-10
+                  h2 Let's find the right account for you in 4 simple steps
+               .col-lg-2
+            .row.wrapper.border-bottom.white-bg.page-heading.result(style='display: none;')
+               .col-lg-10
+                  h2 Our recommendations for you to start investing
+               .col-lg-2
+            .wrapper.wrapper-content.animated.fadeInRight
+               #forms_block.form
+                  #form_basic.row
+                     .col-lg-5
+                        .jumbotron
+                           h2
+                              b Step 1: About You
+                           p Here we get to know you better. Your information is completely confidential.
+                     .col-lg-7
+                        .ibox.float-e-margins
+                        .row.wrapper.border-bottom.white-bg.page-heading
+                           .col-lg-10
+                              h2 Let's find out a bit about you
+                           .col-lg-2
+                           .row
+                              .col-lg-12
+                                 .ibox.float-e-margins
+                                    .ibox-content
+                                       form#ss-form.form_basic.form-horizontal(action='https://docs.google.com/forms/d/1DOJLd8Nu100rRYBg76mIhAMR-kIHKS-sjn2rDfcFZo4/formResponse', method='POST', target='_self', onsubmit='', data-toggle='validator', role='form')
+                                          .form-group
+                                             label.col-sm-2.control-label Name
+                                             .col-sm-10
+                                                input#Name.form-control(name='Name', placeholder='Full name', type='text')
+                                          .hr-line-dashed
+                                          .form-group
+                                             label.col-sm-2.control-label(for='email') E-mail
+                                             .form-control-group
+                                                //
+                                                    <div class="controls">
+                                                    <input type="text" class="input-xlarge" name="email" id="email"></div>
+                                             .col-sm-10
+                                                input#email.form-control(type='email', name='email')
+                                                span.help-block.m-b-none We do not send any spam.
+                                          .hr-line-dashed
+                                          .form-group
+                                             label.col-sm-2.control-label Year of birth
+                                             #birthdate.col-sm-10
+                                                // <input type="text" id="birthdate" name="birth_date"
+                                                // placeholder="Month/Day" class="form-control">
+                                                // <select id="year_of_birth_date" name="year_of_birth_date" class="form-control m-b">
+                                                // <option>1991</option>
+                                                // <option>1990</option>
+                                                // </select>
+                                          .hr-line-dashed
+                                          .form-group
+                                             label.col-sm-2.control-label(for='sexe') Sex
+                                             .col-sm-10
+                                                select#sexe.form-control.m-b(name='sexe')
+                                                   option Male
+                                                   option Female
+                                          .form-group
+                                             .col-sm-4.col-sm-offset-2
+                                                a#submitFirstStep.btn.btn-primary(type='submit') Next
+                                                // <a href="form_basic2.html" class="btn btn-primary" input type="submit" value="Submit">Next</a>
+                                                // <a href="form_basic2.html" class="btn btn-primary" type="submit" value="Submit">Next</a>
+                                                // <input type="submit" value="Check" class="btn btn-success">
+                                                .form-actions
+                                                   // <button type="submit" class="btn btn-success btn-large">Register</button>
+                                                   //
+                                                       <button id="ButtonSubmit" onclick="postContactToGoogle()"
+                                                       type="button" >Send</button>
+                  #form_basic2.row(style='display: none;')
+                     .col-lg-5
+                        .jumbotron
+                           h2
+                              b Step 2: Your preferences
+                           p Let's figure out how active you want to be
+                     .col-lg-7
+                        .ibox.float-e-margins
+                        .row.wrapper.border-bottom.white-bg.page-heading
+                           .col-lg-10
+                              h2 Are you active or passive?
+                           .col-lg-2
+                           .row
+                              .col-lg-12
+                                 .ibox.float-e-margins
+                                    .ibox-content
+                                       form.form_basic2.form-horizontal(method='get')
+                                          .form-group
+                                             label.col-sm-8
+                                                | How often do you plan on following financial
+                                                | news and markets?
+                                                br
+                                             .col-sm-10
+                                                .i-checks
+                                                   label
+                                                      input(type='radio', value='0', name='s2q1')
+                                                      i
+                                                      |  Very rarely
+                                                .i-checks
+                                                   label
+                                                      input(type='radio', value='1', name='s2q1')
+                                                      i
+                                                      |  Quarterly
+                                                .i-checks
+                                                   label
+                                                      input(type='radio', value='2', name='s2q1')
+                                                      i
+                                                      |  Monthly
+                                                .i-checks
+                                                   label
+                                                      input(type='radio', value='3', name='s2q1')
+                                                      i
+                                                      |  2-3 times
+                                                      |                                                             a month
+                                                .i-checks
+                                                   label
+                                                      input(type='radio', value='4', name='s2q1')
+                                                      i
+                                                      |  Weekly
+                                                .i-checks
+                                                   label
+                                                      input(type='radio', value='5', name='s2q1')
+                                                      i
+                                                      |  2-3 times
+                                                      |                                                             a week
+                                                .i-checks
+                                                   label
+                                                      input(type='radio', value='6', name='s2q1')
+                                                      i
+                                                      |                                                             Daily
+                                          .hr-line-dashed
+                                          .form-group
+                                             label.col-sm-8
+                                                | How many hours a month are you willing to spend
+                                                | on learning, researching, and rebalancing your investments?
+                                                br
+                                             .col-sm-10
+                                                .i-checks
+                                                   label
+                                                      input(type='radio', value='0', name='s2q2')
+                                                      |  0-1 hours
+                                                .i-checks
+                                                   label
+                                                      input(type='radio', value='1', name='s2q2')
+                                                      |  1-3 hours
+                                                .i-checks
+                                                   label
+                                                      input(type='radio', value='2', name='s2q2')
+                                                      |  3-5 hours
+                                                .i-checks
+                                                   label
+                                                      input(type='radio', value='3', name='s2q2')
+                                                      |  5-15
+                                                      |                                                             hours
+                                                .i-checks
+                                                   label
+                                                      input(type='radio', value='4', name='s2q2')
+                                                      |  15+ hours
+                                          .hr-line-dashed
+                                          .form-group
+                                             label.col-sm-8
+                                                | Assume you have a portfolio of 10 investments.
+                                                | How often would you want to change your investment mix?
+                                                br
+                                             .col-sm-10
+                                                .i-checks
+                                                   label
+                                                      input(type='radio', value='0', name='s2q3')
+                                                      |  Weekly
+                                                .i-checks
+                                                   label
+                                                      input(type='radio', value='1', name='s2q3')
+                                                      |  Monthly
+                                                .i-checks
+                                                   label
+                                                      input(type='radio', value='2', name='s2q3')
+                                                      |  Quarterly
+                                                .i-checks
+                                                   label
+                                                      input(type='radio', value='3', name='s2q3')
+                                                      |  Twice a
+                                                      |                                                             year
+                                                .i-checks
+                                                   label
+                                                      input(type='radio', value='4', name='s2q3')
+                                                      |  Once a year
+                                                .i-checks
+                                                   label
+                                                      input(type='radio', value='5', name='s2q3')
+                                                      |  Once every few
+                                                      |                                                             years
+                                          .hr-line-dashed
+                                          .form-group
+                                             label.col-sm-8
+                                                | How would you rate your personal knowledge with
+                                                | investing?
+                                                br
+                                             .col-sm-10
+                                                .i-checks
+                                                   label
+                                                      input(type='radio', value='0', name='s2q4')
+                                                      |  Very high
+                                                .i-checks
+                                                   label
+                                                      input(type='radio', value='1', name='s2q4')
+                                                      |  High
+                                                .i-checks
+                                                   label
+                                                      input(type='radio', value='2', name='s2q4')
+                                                      |  Average
+                                                .i-checks
+                                                   label
+                                                      input(type='radio', value='3', name='s2q4')
+                                                      |  Low
+                                                .i-checks
+                                                   label
+                                                      input(type='radio', value='4', name='s2q4')
+                                                      |  Very low
+                                          .form-group
+                                             .col-sm-4.col-sm-offset-2
+                                                a#submitSecondStep.btn.btn-primary(type='submit') Next
+                  #form_basic3.row(style='display: none;')
+                     .col-lg-5
+                        .jumbotron
+                           h2
+                              b Step 3: Your Investor Profile
+                           p Let's discuss your habits and goals.
+                     .col-lg-7
+                        .ibox.float-e-margins
+                        .row.wrapper.border-bottom.white-bg.page-heading
+                           .col-lg-10
+                              h2 Are you a cowboy or cautious?
+                           .col-lg-2
+                           .row
+                              .col-lg-12
+                                 .ibox.float-e-margins
+                                    .ibox-content
+                                       form.form_basic3.form-horizontal(method='get')
+                                          .form-group
+                                             label.col-sm-8
+                                                | How often do you check your finances?
+                                                br
+                                             .col-sm-10
+                                                .i-checks
+                                                   label
+                                                      input(type='radio', value='0', name='s3q1')
+                                                      i
+                                                      |                                                             Daily
+                                                .i-checks
+                                                   label
+                                                      input(type='radio', value='1', name='s3q1')
+                                                      i
+                                                      |  2-3 times
+                                                      |                                                             a week
+                                                .i-checks
+                                                   label
+                                                      input(type='radio', value='2', name='s3q1')
+                                                      i
+                                                      |  Weekly
+                                                .i-checks
+                                                   label
+                                                      input(type='radio', value='3', name='s3q1')
+                                                      i
+                                                      |  A few
+                                                      |                                                             times a month
+                                                .i-checks
+                                                   label
+                                                      input(type='radio', value='4', name='s3q1')
+                                                      i
+                                                      |  Monthly
+                                          .hr-line-dashed
+                                          .form-group
+                                             label.col-sm-8
+                                                | How much are you looking to invest?
+                                                br
+                                             .col-sm-10
+                                                .i-checks
+                                                   label
+                                                      input(type='radio', value='0', name='s3q2')
+                                                      i
+                                                      |  $0 -
+                                                      |                                                             $2,500
+                                                .i-checks
+                                                   label
+                                                      input(type='radio', value='1', name='s3q2')
+                                                      i
+                                                      |  $2,500 -
+                                                      |                                                             $10,000
+                                                .i-checks
+                                                   label
+                                                      input(type='radio', value='2', name='s3q2')
+                                                      i
+                                                      |  $10,000 -
+                                                      |                                                             $50,000
+                                                .i-checks
+                                                   label
+                                                      input(type='radio', value='3', name='s3q2')
+                                                      i
+                                                      |  $50,000 -
+                                                      |                                                             $100,000
+                                                .i-checks
+                                                   label
+                                                      input(type='radio', value='4', name='s3q2')
+                                                      i
+                                                      |  $100,000
+                                                      |                                                             - $250,000
+                                                .i-checks
+                                                   label
+                                                      input(type='radio', value='5', name='s3q2')
+                                                      i
+                                                      |  More than
+                                                      |                                                             $250,000
+                                          .hr-line-dashed
+                                          .form-group
+                                             label.col-sm-8
+                                                | How would you rate your tolerance for risk?
+                                                br
+                                             .col-sm-10
+                                                .i-checks
+                                                   label
+                                                      input(type='radio', value='0', name='s3q3')
+                                                      i
+                                                      |  Very high
+                                                .i-checks
+                                                   label
+                                                      input(type='radio', value='1', name='s3q3')
+                                                      i
+                                                      |  High
+                                                .i-checks
+                                                   label
+                                                      input(type='radio', value='2', name='s3q3')
+                                                      i
+                                                      |  Average
+                                                .i-checks
+                                                   label
+                                                      input(type='radio', value='3', name='s3q3')
+                                                      i
+                                                      |                                                             Low
+                                                .i-checks
+                                                   label
+                                                      input(type='radio', value='4', name='s3q3')
+                                                      i
+                                                      |  Very low
+                                          .hr-line-dashed
+                                          .form-group
+                                             label.col-sm-8
+                                                | At what level of loss would you feel compelled
+                                                | to change your investments?
+                                                br
+                                             .col-sm-10
+                                                .i-checks
+                                                   label
+                                                      input(type='radio', value='0', name='s3q4')
+                                                      i
+                                                      |  0 to
+                                                      |                                                             5%
+                                                .i-checks
+                                                   label
+                                                      input(type='radio', value='1', name='s3q4')
+                                                      i
+                                                      |  5 to 15%
+                                                .i-checks
+                                                   label
+                                                      input(type='radio', value='2', name='s3q4')
+                                                      i
+                                                      |  15 to 25%
+                                                .i-checks
+                                                   label
+                                                      input(type='radio', value='3', name='s3q4')
+                                                      i
+                                                      |  25 to 50%
+                                                      |                                                             month
+                                                .i-checks
+                                                   label
+                                                      input(type='radio', value='4', name='s3q4')
+                                                      i
+                                                      |  More than
+                                                      |                                                             50%
+                                          .hr-line-dashed
+                                          .form-group
+                                             label.col-sm-8
+                                                | How long on average do foresee owning an
+                                                | investment before selling?
+                                                br
+                                             .col-sm-10
+                                                .i-checks
+                                                   label
+                                                      input(type='radio', value='0', name='s3q5')
+                                                      i
+                                                      |                                                             Intra-month
+                                                .i-checks
+                                                   label
+                                                      input(type='radio', value='1', name='s3q5')
+                                                      i
+                                                      |  1 month
+                                                .i-checks
+                                                   label
+                                                      input(type='radio', value='2', name='s3q5')
+                                                      i
+                                                      |  6 months
+                                                .i-checks
+                                                   label
+                                                      input(type='radio', value='3', name='s3q5')
+                                                      i
+                                                      |  1
+                                                      |                                                             year
+                                                .i-checks
+                                                   label
+                                                      input(type='radio', value='4', name='s3q5')
+                                                      i
+                                                      |  2-3 years
+                                                .i-checks
+                                                   label
+                                                      input(type='radio', value='5', name='s3q5')
+                                                      i
+                                                      |  3-10
+                                                      |                                                             years
+                                                .i-checks
+                                                   label
+                                                      input(type='radio', value='6', name='s3q5')
+                                                      i
+                                                      |  10+ years
+                                          .hr-line-dashed
+                                          .form-group
+                                             .col-sm-4.col-sm-offset-2
+                                                a#submitThirdStep.btn.btn-primary(type='submit') Next
+                  #form_basic4.row(style='display: none;')
+                     .col-lg-5
+                        .jumbotron
+                           h2
+                              b Step 4: Your Account Preferences
+                           p Let's discuss how you like your services.
+                     .col-lg-7
+                        .ibox.float-e-margins
+                        .row.wrapper.border-bottom.white-bg.page-heading
+                           .col-lg-10
+                              h2 Do you like to be pampered?
+                           .col-lg-2
+                           .row
+                              .col-lg-12
+                                 .ibox.float-e-margins
+                                    .ibox-content
+                                       form.form_basic4.form-horizontal(method='get')
+                                          .form-group
+                                             label.col-sm-8
+                                                | What is your level of trust and confidence with
+                                                | the finance industry as a whole?
+                                                br
+                                             .col-sm-10
+                                                .i-checks
+                                                   label
+                                                      input(type='radio', value='0', name='s4q1')
+                                                      i
+                                                      |                                                             High
+                                                .i-checks
+                                                   label
+                                                      input(type='radio', value='1', name='s4q1')
+                                                      i
+                                                      |  Medium
+                                                .i-checks
+                                                   label
+                                                      input(type='radio', value='2', name='s4q1')
+                                                      i
+                                                      |  Low
+                                          .hr-line-dashed
+                                          .form-group
+                                             label.col-sm-8
+                                                | How important is having an expert to ask
+                                                | questions about your investments?
+                                                br
+                                             .col-sm-10
+                                                .i-checks
+                                                   label
+                                                      input(type='radio', value='0', name='s4q2')
+                                                      i
+                                                      |                                                             High
+                                                .i-checks
+                                                   label
+                                                      input(type='radio', value='1', name='s4q2')
+                                                      i
+                                                      |  Medium
+                                                .i-checks
+                                                   label
+                                                      input(type='radio', value='2', name='s4q2')
+                                                      i
+                                                      |  Low
+                                          .hr-line-dashed
+                                          .form-group
+                                             label.col-sm-8
+                                                | How important is the flexibilty to adjust your
+                                                | investments to you?
+                                                br
+                                             .col-sm-10
+                                                .i-checks
+                                                   label
+                                                      input(type='radio', value='0', name='s4q3')
+                                                      i
+                                                      |                                                             High
+                                                .i-checks
+                                                   label
+                                                      input(type='radio', value='1', name='s4q3')
+                                                      i
+                                                      |  Medium
+                                                .i-checks
+                                                   label
+                                                      input(type='radio', value='2', name='s4q3')
+                                                      i
+                                                      |  Low
+                                          .hr-line-dashed
+                                          .form-group
+                                             label.col-sm-8
+                                                | How important is expressing your own investment
+                                                | ideas in your investment account?
+                                                br
+                                             .col-sm-10
+                                                .i-checks
+                                                   label
+                                                      input(type='radio', value='0', name='s4q4')
+                                                      i
+                                                      |                                                             High
+                                                .i-checks
+                                                   label
+                                                      input(type='radio', value='1', name='s4q4')
+                                                      i
+                                                      |  Medium
+                                                .i-checks
+                                                   label
+                                                      input(type='radio', value='2', name='s4q4')
+                                                      i
+                                                      |  Low
+                                          .hr-line-dashed
+                                          .form-group
+                                             label.col-sm-8
+                                                | How important is the cost of financial services
+                                                | to you
+                                                br
+                                             .col-sm-10
+                                                .i-checks
+                                                   label
+                                                      input(type='radio', value='0', name='s4q5')
+                                                      i
+                                                      |  Very
+                                                      |                                                             important. Regardless of how my investments perform, I want
+                                                      |                                                             to pay the lowest possible cost.
+                                                .i-checks
+                                                   label
+                                                      input(type='radio', value='1', name='s4q5')
+                                                      i
+                                                      |  Moderate.
+                                                      |                                                             I am willing to pay a reasonable fees for service, but I do
+                                                      |                                                             not believe paying more equals better performance.
+                                                .i-checks
+                                                   label
+                                                      input(type='radio', value='2', name='s4q5')
+                                                      i
+                                                      |  Less important. I am willing to pay more for the potential of better advice and performance.
+                                          .hr-line-dashed
+                                    .form-group
+                                       .col-sm-4.col-sm-offset-2
+                                          a#submitFourthStep.btn.btn-primary(type='submit', value='Check Form?') Submit!
+               #result.result(style='display: none;')
+                  .wrapper.wrapper-content.animated.fadeInRight
+                     .row
+                     .row
+                        .col-lg-6
+                           .ibox.float-e-margins
+                              .ibox-title
+                                 h5 Your investment profile
+                                 div(ibox-tools='')
+                              .ibox-content
+                                 .text-center
+                                    canvas#radarChart(height='140')
+                        .col-lg-6
+                           .ibox.float-e-margins
+                              .ibox-title
+                                 h5 Your recommended portfolio
+                                 div(ibox-tools='')
+                              .ibox-content
+                                 div
+                                    canvas#doughnutChart(height='140')
+                  #result_PBA.row(style='display: none;')
+                     .col-lg-12
+                        .ibox.float-e-margins
+                           .ibox-title
+                              h5 Your recommended account type
+                              div
+                           .ibox-content
+                              .list-group
+                                 a.list-group-item.active(href='#')
+                                    h3.list-group-item-heading
+                                       | LifVest recommends a personal brokerage
+                                       | account
+                                    p.list-group-item-heading
+                                       | We believe you are suited for a low-cost,
+                                       | do-it-yourself Tradestation brokerage account. In this account, you manage your
+                                       | money personally and can buy stocks, ETFs, mutual funds, bonds, and options.
+                                       | In general, LifVest recommends low-cost index funds for the majority of your
+                                       | money alongside a minority allocation of single stocks.
+                                 a.list-group-item(href='#')
+                                    h3.list-group-item-heading What does Tradestation charge?
+                                    p.list-group-item-heading
+                                       | Brokerage accounts make money by handling
+                                       | your transactions - your buys and sells. Specifically, Tradestation charges either $5 per trade or $0.01 per share -- your choice.
+                                    p
+                                       | Also, it is important to note that many
+                                       | investments you buy charge a management fee -- that is, a percentage cost to
+                                       | own the investment. Pay attention to the management fee for every ETF or
+                                       | mutual fund you buy! Broadly speaking, a personal brokerage account is the
+                                       | cheapest way to invest, but it sacrifices personal service, expert advice,
+                                       | and automation.
+                                 a.list-group-item(href='http://www.kqzyfj.com/click-7847074-11539003-1432759005000', target='_blank')
+                                    h3.list-group-item-heading Our Recommended Advisor
+                                    p.list-group-item-heading
+                                    .m-b-sm
+                                       .betterment-logo
+                                          img(src='http://www.ftjcfx.com/image-7847074-11539003-1432759005000', width='60%')
+                              div
+                  #result_IFA.row(style='display: none;')
+                     .col-lg-12
+                        .ibox.float-e-margins
+                           .ibox-title
+                              h5 Your recommended account type
+                              div
+                           .ibox-content
+                              .list-group
+                                 a.list-group-item.active(href='#')
+                                    h3.list-group-item-heading
+                                       | LifVest recommends a personal financial
+                                       | advisor
+                                    p.list-group-item-heading
+                                       | We believe you are suited for a Morgan
+                                       | Stanley financial advisor to manage your investments. With a financial
+                                       | advisor, your investments are a constant conversation between you and your
+                                       | wealth manager. Since you do not have the time or desire to manage your
+                                       | money yourself, your private wealth manager will follow markets and invest
+                                       | for you. One of the most valuable aspects of using a personal financial
+                                       | advisor is they answer your questions about investing, while personal
+                                       | brokerage accounts and robo-advisors do not.
+                                 a.list-group-item(href='#')
+                                    h3.list-group-item-heading What does Morgan Stanley charge?
+                                    p.list-group-item-heading
+                                       | Wealth managers make money by charging a
+                                       | management fee, a percentage of your money. In addition, the brokerage
+                                       | account you utilize charges commissions for transactions. The costs for
+                                       | personal advisors is variable. Broadly speaking, personal financial advisors
+                                       | are more costly than other options for investing, but they provide personal
+                                       | service and human expertise.
+                                 a.list-group-item(href='http://www.morganstanleyfa.com/locator/', target='_blank')
+                                    h3.list-group-item-heading Our Recommended Advisor
+                                    p.list-group-item-heading
+                                    .m-b-sm
+                                       .betterment-logo
+                                          img(src='/forms/img/Morgan_Stanley_logo.png', width='80%')
+                              div
+                  #result_RIA.row(style='display: none;')
+                     .col-lg-12
+                        .ibox.float-e-margins
+                           .ibox-title
+                              h5 Your recommended account type
+                              div
+                           .ibox-content
+                              .list-group
+                                 a.list-group-item.active(href='#')
+                                    h3.list-group-item-heading
+                                       | LifVest recommends a Registered Investment
+                                       | Advisor
+                                    p.list-group-item-heading
+                                       | We believe you are best suited for a registered investment advisor to manage your investments. With an RIA, your investments are overseen by an investment professional with a public track record. Since you do not have the desire or time to invest yourself, your RIA will follow markets and rebalance for you.
+                                 a.list-group-item(href='#')
+                                    h3.list-group-item-heading What do RIAs charge?
+                                    p.list-group-item-heading
+                                       | RIAs make money by charging a management fee, a percentage of your money. The cost for independent RIAs are variable, but a typical fee is 1-2% every year. RIAs can offer unique and complex styles for investing. Lifvest recommends meeting RIA firms in person before investing.
+                                 a.list-group-item(href='https://www.guidevine.com/', target='_blank')
+                                    h3.list-group-item-heading Our Recommended Advisor
+                                    p.list-group-item-heading
+                                    .m-b-sm
+                                       .betterment-logo
+                                          img(src='/forms/img/Guidevine.png', width='80%')
+                              div
+                  #result_ROBO.row(style='display: none;')
+                     .col-lg-12
+                        .ibox.float-e-margins
+                           .ibox-title
+                              h5 Your recommended account type
+                              div
+                           .ibox-content
+                              .list-group
+                                 a.list-group-item.active(href='#')
+                                    h3.list-group-item-heading
+                                       | LifVest recommends a robo-advisor
+                                       | account
+                                    p.list-group-item-heading
+                                       | We believe you are suited for a Wealthfront
+                                       | robo-advisor account. In this account, your money is invested by a
+                                       | third-party, Wealthfront, and is diversified into a portfolio of low-cost
+                                       | index funds. Wealthfront chooses a mix of assets for you out of a menu of 11
+                                       | index funds (ETFs). In addition, Wealthfront rebalances the account
+                                       | periodically to maintain your investment mix. Since robo-advisors use a
+                                       | formula to invest people's money, they charge lower fees than a traditional
+                                       | financial advisor.
+                                 a.list-group-item(href='#')
+                                    h3.list-group-item-heading What does Wealthfront charge?
+                                    p.list-group-item-heading
+                                       | Robo-advisors make money by charging a
+                                       | management fee, a percentage of your money. Specifically, Wealthfront
+                                       | charges 0.25% a year for balances higher than $10,000. For example, if you
+                                       | invested $100,000 at Wealthfront, you would pay them $225 a year ($90,000 x
+                                       | 0.0025 ; first $10,000 is managed for free). Also, it is important to note
+                                       | that the ETFs Wealthfront buy for your account have management fees
+                                       | (generally 0.05% to 0.25% a year). These fees are reflected directly in the
+                                       | value of the ETFs (for a 0.05% fee, instead of getting a bill of a nickel
+                                       | for every $100 you had invested in that fund, the fund's value would go from
+                                       | $100 to $99.95). Broadly speaking, robo-advisor fees are some of the lowest
+                                       | found in finance, but they sacrifice personal service and flexibility.
+                                 a.list-group-item(href='https://www.wealthfront.com/', target='_blank')
+                                    h3.list-group-item-heading Our Recommended Advisor
+                                    p.list-group-item-heading
+                                    .m-b-sm
+                                       .betterment-logo
+                                          img(src='/forms/img/wealthfront_logo.png', width='100%')
+                              div
+            .footer
+               .pull-right
+                  strong copyright
+                  |  LifVest © 2015
+               div

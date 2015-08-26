@@ -1,0 +1,51 @@
+doctype html
+html
+	head
+		meta(charset='utf-8')
+		meta(name='viewport', content='width=device-width, initial-scale=1.0')
+		title Lifvest | Register
+		link(href='/forms/css/bootstrap.min.css', rel='stylesheet')
+		link(href='/font-awesome/css/font-awesome.css', rel='stylesheet')
+		link(href='/forms/css/plugins/iCheck/custom.css', rel='stylesheet')
+		link(href='/forms/css/animate.css', rel='stylesheet')
+		link(href='/forms/css/style.css', rel='stylesheet')
+	body.gray-bg
+		.middle-box.text-center.loginscreen.animated.fadeInDown
+			div
+				div
+					h1.logo-name Lv
+				h3 Register to Lifvest
+				p Create a new Lifvest Account
+				form#ss-form.m-t(role='form',action='/register',method='post')
+					.form-group
+						input.form-control(type='text', placeholder='Username', name='username', required='')
+					.form-group
+						input.form-control(type='email', placeholder='Email', name='email', required='')
+					.form-group
+						input.form-control(type='password', placeholder='Password', name='password', required='')
+					.form-group
+						.checkbox.i-checks
+							input#agreement(type='checkbox', name='agreement')
+							|  Agree the terms and policy
+					button#signupBtn.btn.btn-primary.block.full-width.m-b(type='submit') Register
+				p.text-muted.text-center
+					small Already have an account?
+				a.btn.btn-sm.btn-white.btn-block(href='/login') Login
+				p.m-t
+					small Lifvest © 2015
+		// Mainly scripts
+		script(src='/forms/js/jquery-2.1.1.js')
+		script(src='/forms/js/bootstrap.min.js')
+		// iCheck
+		script(src='/forms/js/plugins/iCheck/icheck.min.js')
+		// md5 plugin
+		script(src='/forms/../js/jquery.md5.js')
+		script.
+			$(document).ready(function () {
+				$('.i-checks').iCheck({
+					checkboxClass: 'icheckbox_square-green',
+					radioClass: 'iradio_square-green',
+				});
+			});
+		// Validators?
+		script(src='/forms/js/plugins/validate/jquery.validate.min.js')

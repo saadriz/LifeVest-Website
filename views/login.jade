@@ -1,0 +1,36 @@
+doctype html
+html
+	head
+		meta(charset='utf-8')
+		meta(name='viewport', content='width=device-width, initial-scale=1.0')
+		title Lifvest | Login
+		link(href='/forms/css/bootstrap.min.css', rel='stylesheet')
+		link(href='/forms/font-awesome/css/font-awesome.css', rel='stylesheet')
+		link(href='/forms/css/animate.css', rel='stylesheet')
+		link(href='/forms/css/style.css', rel='stylesheet')
+	body.gray-bg
+		.middle-box.text-center.loginscreen.animated.fadeInDown
+			div
+				div
+					h1.logo-name(background='img/LV_logo_green.png') LV
+				h3 Welcome to Lifvest
+				p
+					| Login to contniue
+					// Continually expanded and constantly improved Inspinia Admin Them (IN+)
+				p Login in. To see it in action.
+				form#ss-form.m-t(role='form',action='login',method='post')
+					.form-group
+						input.form-control(type='text', placeholder='Username', name='username', required='')
+					.form-group
+						input.form-control(type='password', placeholder='Password', name='password', required='')
+					button#login.btn.btn-primary.block.full-width.m-b(type='submit') Login
+				a(href='#')
+					small Forgot password?
+				p.text-muted.text-center
+					small Do not have an account?
+				a.btn.btn-sm.btn-white.btn-block(href='/register') Create an account
+				p.m-t
+					small Lifvest © 2015
+		// Mainly scripts
+		script(src='/forms/js/jquery-2.1.1.js')
+		script(src='/forms/js/bootstrap.min.js')

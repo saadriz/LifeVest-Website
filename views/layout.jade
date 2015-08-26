@@ -1,0 +1,68 @@
+doctype html
+html
+	head
+		title= title
+		meta(charset='utf-8')
+		meta(name='viewport', content='width=device-width, initial-scale=1.0')
+		link(href='/forms/css/bootstrap.min.css', rel='stylesheet')
+		link(href='/forms/font-awesome/css/font-awesome.css', rel='stylesheet')
+		link(href='/forms/css/plugins/iCheck/custom.css', rel='stylesheet')
+		link(href='/forms/css/plugins/steps/jquery.steps.css', rel='stylesheet')
+		link(href='/forms/css/animate.css', rel='stylesheet')
+		link(href='/forms/css/style.css', rel='stylesheet')
+	body
+		block content
+		// Mainly scripts
+		script.
+			(function (i, s, o, g, r, a, m) {
+				i['GoogleAnalyticsObject'] = r;
+				i[r] = i[r] || function () {
+							(i[r].q = i[r].q || []).push(arguments)
+						}, i[r].l = 1 * new Date();
+				a = s.createElement(o),
+						m = s.getElementsByTagName(o)[0];
+				a.async = 1;
+				a.src = g;
+				m.parentNode.insertBefore(a, m)
+			})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+			ga('create', 'UA-65823803-1', 'auto');
+			ga('require', 'linkid', 'linkid.js');
+			ga('send', 'pageview');
+		script(src='js/jquery-2.1.1.js')
+		script(src='js/bootstrap.min.js')
+		script(src='/forms/js/plugins/metisMenu/jquery.metisMenu.js')
+		script(src='/forms/js/plugins/slimscroll/jquery.slimscroll.min.js')
+		// Validators?
+		script(src='/forms/js/plugins/validate/jquery.validate.min.js')
+		//script(src='script.js')
+		script.
+			addEventListener('load', prettyPrint, false);
+			$(document).ready(function () {
+				$('pre').addClass('prettyprint linenums');
+			});
+		// Custom and plugin javascript
+		script(src='/forms/js/inspinia.js')
+		script(src='/forms/js/plugins/pace/pace.min.js')
+		// iCheck
+		script(src='/forms/js/plugins/iCheck/icheck.min.js')
+		script.
+			$(document).ready(function () {
+				$('.i-checks').iCheck({
+					checkboxClass: 'icheckbox_square-green',
+					radioClass: 'iradio_square-green',
+				});
+			});
+		// Form controller js
+		script(src='/forms/js/demo/allocationRules.js')
+		script(src='/forms/js/demo/scoreRules.js')
+		script(src='/forms/js/demo/form.js')
+		// Flot
+		script(src='/forms/js/plugins/flot/jquery.flot.js')
+		script(src='/forms/js/plugins/flot/jquery.flot.tooltip.min.js')
+		script(src='/forms/js/plugins/flot/jquery.flot.resize.js')
+		script(src='/forms/js/plugins/flot/jquery.flot.pie.js')
+		// ChartJS
+		script(src='/forms/js/plugins/chartJs/Chart.min.js')
+		script(src='/forms/js/demo/chartjs-demo.js')
+
+

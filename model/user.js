@@ -16,15 +16,20 @@ var AnswerSchema = new Schema({
 });
 
 var UserSchema = new Schema({
+	username: {
+		type: String
+	},
 	name: {
 		type: String
 	},
 	email: {
 		type: String
 	},
+	password: {
+		type: String
+	},
 	year_of_birth: {
-		type: String,
-		required: true
+		type: String
 	},
 	sexe: {
 		type: String
