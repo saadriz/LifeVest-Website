@@ -4070,10 +4070,6 @@ a.close-canvas-menu:hover {
 .m-b-sm {
   margin-bottom: 10px;
 }
-.betterment-logo
-{
-  width:20%;
-}
 .m-b {
   margin-bottom: 15px;
 }
@@ -4201,7 +4197,6 @@ body.modal-open {
   font-weight: 800;
   letter-spacing: -10px;
   margin-bottom: 0px;
-  background-image: "img/LV_logo_green.png"
 }
 .middle-box h1 {
   font-size: 170px;
@@ -7482,4 +7477,122 @@ body.skin-3 {
   .welcome-message {
     display: none;
   }
+}
+
+
+/*----Additional Style by redfin----*/
+/*--elements---*/
+#account-page .table > tbody > tr > td {
+  border-top: 0px;
+}
+#account-page .table > tbody > tr > td.indent {
+  padding-left: 20px;
+}
+#account-page .table > tbody > tr > td.bold {
+  font-weight: bold;
+}
+#account-page .table > tbody > tr > td.grey {
+  background:#D9D9D9;
+  text-align: center;
+}
+#account-page .table > tbody > tr > td.green {
+  background:#00B050;
+  color:#ffffff;
+  text-align: center;
+}
+#account-page .table > tbody > tr > td.yellow {
+  background:#FFC000;
+  text-align: center;
+}
+#account-page .table > tbody > tr > td h5 {
+  font-weight: bold;
+}
+#account-page .table > tbody > tr > th {
+  border-top: 0px;
+  font-size: 12px;
+}
+#account-page table {
+  font-size: 11px;
+
+}
+#account-page ul.investment-list {
+  padding-left: 0px;
+  font-size: 12px;
+}
+#account-page ul.investment-list li  {
+  margin-bottom: 7px;
+}
+
+#account-page table.indent {
+  margin-left: 50px;
+  font-size: 15px;
+  max-width: 90%;
+}
+
+#account-page h1.indent{
+  margin-left: 50px;
+  font-weight: normal;
+}
+#account-page .minimalize-styl-2, #account-page .navbar-form-custom  {
+  display: none;
+}
+ul.legend {
+  list-style: none;
+  text-align: center;
+  padding-left: 0px;
+  border-left:2px solid #DFDFDF;
+  border-right:2px solid #DFDFDF;
+}
+ul.legend li {
+  padding:7px 0px;
+  margin: 2px 0px;
+}
+ul.legend li.green {
+  border-right: 5px solid #C8DC42;
+  border-left: 5px solid #C8DC42;
+}
+ul.legend li.yellow {
+  border-right: 5px solid #FFC927;
+  border-left: 5px solid #FFC927;
+}
+ul.legend li.orange {
+  border-right: 5px solid #F37120;
+  border-left: 5px solid #F37120;
+}
+ul.legend li.cyan {
+  border-right: 5px solid #38CFFF;
+  border-left: 5px solid #38CFFF;
+}
+ul.legend li.blue {
+  border-right: 5px solid #148FCC;
+  border-left: 5px solid #148FCC;
+}
+ul.legend li.purple {
+  border-right: 5px solid #E8466E;
+  border-left: 5px solid #E8466E;
+}
+.logo {
+	width: 130px;
+    margin-top: 12px;
+    margin-left: 22px;
+}
+#account-page .ibox-title h5 {
+  color: #1F4D78;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#account-page .flot-chart-pie-content {
+  width:120px;
+  height: 120px;
+  margin: auto 0;
+  margin-top: 36px;
+}
+
+/*----jqwidget=---*/
+ .jqx-treemap-rectangle {
+    border: 1px solid #fff !important;
+}
+.jqx-treemap-label {
+    display:none;
 }
