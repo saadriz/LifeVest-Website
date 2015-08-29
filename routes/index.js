@@ -38,8 +38,17 @@ router.get('/login', function(req, res) {
 	res.render('login', { user : req.user });
 });
 
-router.post('/login', passport.authenticate('local'), function(req, res) {
-	res.redirect('/main');
+router.post('/login', function(req, res, next) {
+	passport.authenticate('local', function(err, user, info) {
+		if (err) { return next(err); }
+		// Redirect if it fails
+		if (!user) { return res.render('login', { error: "Your username or password are incorrect." }) }
+		req.logIn(user, function(err) {
+			if (err) { return next(err); }
+			// Redirect if it succeeds
+			return res.redirect('/main');
+		});
+	})(req, res, next);
 });
 
 router.get('/logout', function(req, res) {

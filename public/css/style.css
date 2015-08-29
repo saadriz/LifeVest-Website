@@ -1035,3 +1035,12 @@ section.comments {
     visibility: hidden;
   }
 }
+
+/*
+ *
+ *
+ * LOGIN
+ */
+.error_form {
+    color: red;
+}

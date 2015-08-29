@@ -18,11 +18,13 @@ html
 					| Login to contniue
 					// Continually expanded and constantly improved Inspinia Admin Them (IN+)
 				p Login in. To see it in action.
-				form#ss-form.m-t(role='form',action='login',method='post')
+				form#ss-form.m-t(role='form',action='/login',method='post')
 					.form-group
 						input.form-control(type='text', placeholder='Username', name='username', required='')
 					.form-group
 						input.form-control(type='password', placeholder='Password', name='password', required='')
+					.error_form
+						| #{error}
 					button#login.btn.btn-primary.block.full-width.m-b(type='submit') Login
 				a(href='#')
 					small Forgot password?

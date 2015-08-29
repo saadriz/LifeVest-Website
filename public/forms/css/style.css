@@ -7482,3 +7482,11 @@ body.skin-3 {
     display: none;
   }
 }
+
+/*
+ * LOGIN
+ */
+.error_form {
+  color: red;
+  padding: 3px;
+}
