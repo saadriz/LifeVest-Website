@@ -1,0 +1,118 @@
+extends ../base
+
+block content
+		.row.wrapper.border-bottom.white-bg.page-heading
+			.col-lg-10
+				h2 Lifvest primer: Step 1
+				ol.breadcrumb
+			.col-lg-2
+		.row.wrapper.border-bottom.white-bg.page-heading
+			.col-lg-10
+				h2 Why you need to invest
+			.col-lg-2
+		.wrapper.wrapper-content.animated.fadeInRight
+			.row
+				.col-lg-8
+					.jumbotron.primer_1
+						p
+							| You’ve done it! You’ve finally sat down and convinced yourself that you need to focus on your finances. This life-long process begins with building financial security and ends with financial freedom.
+						p
+							| Through the the next six sections, we will set you on that path: we’ll discuss your targets and walk you through how you can start building a portfolio. Then, we will actually invest your money together!
+						p
+							| Do you notice how the prices of things go up every year? It feels like we are fighting a battle every time we try to set aside savings. Inflation is one of the biggest reasons we need to be investing. President Reagan once called inflation “a silent thief of every paycheck.” Let us take a look at how inflation affects our money.
+						p
+							| “Compound interest is the eighth wonder of the world. Those who understand it, earn it ... those who don't pay it.”
+							| -Albert Einstein
+						p
+							| Generally, everyone is familiar with the concept of interest. We place our money in a bank, and over time, the bank pays us a small return on our savings. If we invest, we may earn higher returns, but we take higher risks to earn those returns.
+						p
+							| We at Lifvest want to emphasize  that the riskiest thing you can do with your money in the long run is not investing because inflation is compounding against you. Take a look at the Rule of 72 to see how purchasing power goes down over your lifetime.
+						p
+							| Over the past 100 years, the US rate of inflation was slightly more than 3%. According to the Rule of 72, money doubles every 24 years at 3% interest. If you invest and earn 3% a year, your money will double after 24 years. However, if inflation is also 3%, then your purchasing power will be the same! Compound interest works both ways.
+						p
+							| If you do not invest and inflation is 3% in your lifetime, then 24 years from now, your money will be worth half of what it is today. Realizing that it is not necessarily “safe” to hold your savings in cash is the first step to getting started investing. Every year, we need to beat the inflation rate in order to be financially comfortable.
+				.col-lg-4
+					.row.wrapper.border-bottom.white-bg.page-heading
+						.col-lg-10
+							h2 Inflation and compounding
+						.col-lg-2
+						.row
+							.col-lg-12
+								.ibox.float-e-margins
+									.ibox-content
+										form.form-horizontal(method='get')
+											.form-group
+												label.col-sm-2.control-label Savings
+												.col-sm-10
+													input.form-control.saving(type='text')
+											.hr-line-dashed
+											.form-group
+												label.col-sm-2.control-label Number of years
+												.col-sm-10
+													input.form-control.number_of_year(type='text')
+											.hr-line-dashed
+											button.btn.btn-block.btn-outline.btn-primary.launch_educational_tool(type='button', data-toggle='modal', data-target='#myModal4') Launch tool
+											#myModal4.modal.inmodal(tabindex='-1', role='dialog', aria-hidden='true')
+												.modal-dialog
+													.modal-content.animated.fadeIn
+														.modal-header
+															button.close(type='button', data-dismiss='modal')
+																span(aria-hidden='true') ×
+																span.sr-only Close
+															i.fa.fa-clock-o.modal-icon
+															h4.modal-title Inflation and compounding
+														.modal-body
+															div
+																table
+																	tr
+																		td(style='width: ' + (100 / 2) + '%').
+																			Saving
+																		td.saving
+																	tr
+																		td(style='width: ' + (100 / 2) + '%').
+																			Number of years
+																		td#number_of_year
+																	tr
+																		td(style='width: ' + (100 / 2) + '%').
+																			Inflation Rate
+																		td#inflation_rate
+																	tr
+																		td(style='width: ' + (100 / 2) + '%').
+																			Investment Returns
+																		td#investment_returns
+																table
+																	tr
+																		td
+																		td(style='width: ' + 20 + '%').
+																			Start
+																		td(style='width: ' + 20 + '%').
+																			Paper Value
+																		td(style='width: ' + 20 + '%').
+																			Purchasing Power
+																	tr
+																		td
+																		td
+																			|2000
+																		td
+																			|2015
+																		td
+																			|2015
+																	tr
+																		td
+																			|Not Invested
+																		td.saving
+																		td.not_invested_paper_value
+																		td.not_invested_purchasing_power
+																	tr
+																		td
+																			|Invested
+																		td.saving
+																		td.invested_paper_value
+																		td.invested_purchasing_power
+															div
+																
+														.modal-footer
+															button.btn.btn-white(type='button', data-dismiss='modal') Close
+															button.btn.btn-primary(type='button') Save changes
+				button.btn.btn-w-m.btn-success(type='button') Next
+		include ../footer

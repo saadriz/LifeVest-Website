@@ -10,9 +10,8 @@ router.get('/', function (req, res) {
 });
 
 router.get('/main', function(req, res) {
-	console.log(req.user);
 	if (req.user) {
-		res.render('main', { title: "LifVest | Start investing" })
+		res.render('/main', { title: "LifVest | Start investing" })
 	} else {
 		res.redirect('/login');
 	}
@@ -46,9 +45,17 @@ router.post('/login', function(req, res, next) {
 		req.logIn(user, function(err) {
 			if (err) { return next(err); }
 			// Redirect if it succeeds
-			return res.redirect('/main');
+			return res.redirect('/primer');
 		});
 	})(req, res, next);
+});
+
+router.get('/primer', function(req, res, next) {
+	if (req.user) {
+		res.render('admin/tools/primer', { title: "LifVest | Start investing" })
+	} else {
+		res.redirect('login');
+	}
 });
 
 router.get('/logout', function(req, res) {
