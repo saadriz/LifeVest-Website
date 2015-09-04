@@ -12,7 +12,7 @@ block content
 			.col-lg-2
 		.wrapper.wrapper-content.animated.fadeInRight
 			.row
-				.col-lg-8
+				.col-lg-6
 					.jumbotron.primer_1
 						p
 							| You’ve done it! You’ve finally sat down and convinced yourself that you need to focus on your finances. This life-long process begins with building financial security and ends with financial freedom.
@@ -31,7 +31,7 @@ block content
 							| Over the past 100 years, the US rate of inflation was slightly more than 3%. According to the Rule of 72, money doubles every 24 years at 3% interest. If you invest and earn 3% a year, your money will double after 24 years. However, if inflation is also 3%, then your purchasing power will be the same! Compound interest works both ways.
 						p
 							| If you do not invest and inflation is 3% in your lifetime, then 24 years from now, your money will be worth half of what it is today. Realizing that it is not necessarily “safe” to hold your savings in cash is the first step to getting started investing. Every year, we need to beat the inflation rate in order to be financially comfortable.
-				.col-lg-4
+				.col-lg-6
 					.row.wrapper.border-bottom.white-bg.page-heading
 						.col-lg-10
 							h2 Inflation and compounding
@@ -41,78 +41,92 @@ block content
 								.ibox.float-e-margins
 									.ibox-content
 										form.form-horizontal(method='get')
-											.form-group
-												label.col-sm-2.control-label Savings
-												.col-sm-10
-													input.form-control.saving(type='text')
+											div
+												table.table-striped(style='width: 100%;text-align: center;margin: 5% 5% 5% 0;')
+													tr
+														td(style='width: ' + (100 / 2) + '%').
+															Saving
+														td.saving
+													tr
+														td(style='width: ' + (100 / 2) + '%').
+															Number of years
+														td#number_of_year
+													tr
+														td(style='width: ' + (100 / 2) + '%').
+															Inflation Rate
+														td#inflation_rate
+													tr
+														td(style='width: ' + (100 / 2) + '%').
+															Investment Returns
+														td#investment_returns
+												table.table-striped(style='width: 100%;text-align: center;margin: 5% 5% 5% 0;')
+													tr
+														td
+														td(style='width: ' + 20 + '%').
+															Start
+														td(style='width: ' + 20 + '%').
+															Paper Value
+														td(style='width: ' + 35 + '%').
+															Purchasing Power
+													tr
+														td
+														td
+															| 2000
+														td
+															| 2015
+														td
+															| 2015
+													tr
+														td
+															| Not Invested
+														td.saving
+														td#not_invested_paper_value
+														td#not_invested_purchasing_power
+													tr
+														td
+															| Invested
+														td.saving
+														td#invested_paper_value
+														td#invested_purchasing_power
+											div
+												canvas#horizontalBarChart(height='140')
 											.hr-line-dashed
-											.form-group
-												label.col-sm-2.control-label Number of years
-												.col-sm-10
-													input.form-control.number_of_year(type='text')
-											.hr-line-dashed
-											button.btn.btn-block.btn-outline.btn-primary.launch_educational_tool(type='button', data-toggle='modal', data-target='#myModal4') Launch tool
-											#myModal4.modal.inmodal(tabindex='-1', role='dialog', aria-hidden='true')
-												.modal-dialog
-													.modal-content.animated.fadeIn
-														.modal-header
-															button.close(type='button', data-dismiss='modal')
-																span(aria-hidden='true') ×
-																span.sr-only Close
-															i.fa.fa-clock-o.modal-icon
-															h4.modal-title Inflation and compounding
-														.modal-body
-															div
-																table
-																	tr
-																		td(style='width: ' + (100 / 2) + '%').
-																			Saving
-																		td.saving
-																	tr
-																		td(style='width: ' + (100 / 2) + '%').
-																			Number of years
-																		td#number_of_year
-																	tr
-																		td(style='width: ' + (100 / 2) + '%').
-																			Inflation Rate
-																		td#inflation_rate
-																	tr
-																		td(style='width: ' + (100 / 2) + '%').
-																			Investment Returns
-																		td#investment_returns
-																table
-																	tr
-																		td
-																		td(style='width: ' + 20 + '%').
-																			Start
-																		td(style='width: ' + 20 + '%').
-																			Paper Value
-																		td(style='width: ' + 20 + '%').
-																			Purchasing Power
-																	tr
-																		td
-																		td
-																			|2000
-																		td
-																			|2015
-																		td
-																			|2015
-																	tr
-																		td
-																			|Not Invested
-																		td.saving
-																		td.not_invested_paper_value
-																		td.not_invested_purchasing_power
-																	tr
-																		td
-																			|Invested
-																		td.saving
-																		td.invested_paper_value
-																		td.invested_purchasing_power
-															div
-
-														.modal-footer
-															button.btn.btn-white(type='button', data-dismiss='modal') Close
-															button.btn.btn-primary(type='button') Save changes
+										button.btn.btn-block.btn-outline.btn-primary.launch_educational_tool
+											| Launch tool
+										#myModal4.modal.inmodal(tabindex='-1', role='dialog', aria-hidden='true')
+											.modal-dialog
+												.modal-content.animated.fadeIn
+													.modal-header
+														button.close.close_educ_tool(type='button', data-dismiss='modal')
+															span(aria-hidden='true') ×
+															span.sr-only Close
+														i.fa.fa-clock-o.modal-icon
+														h4.modal-title Inflation and compounding
+													.modal-body
+														form#variable_form
+															.form-horizontal
+																.form-group
+																	label.col-sm-4.control-label(style="text-align:center;")
+																		| Savings ($)
+																	.col-sm-8
+																		input.form-control.saving_input(name='saving',type="text", value="#{primer.saving}", required="required")
+																.form-group
+																	label.col-sm-4.control-label(style="text-align:center;")
+																		| Number of years
+																	.col-sm-8
+																		input.form-control.number_of_year_input(name='years',type='text', value="#{primer.years}", required="required")
+																.form-group
+																	label.col-sm-4.control-label(style="text-align:center;")
+																		| Inflation Rate (%)
+																	.col-sm-8
+																		input.form-control.inflation_rate_input(name='inflation',type='text', value="#{primer.inflation}", required="required")
+																.form-group
+																	label.col-sm-4.control-label(style="text-align:center;")
+																		| Investment Rate (%)
+																	.col-sm-8
+																		input.form-control.investment_rate_input(name='investment',type='text', value="#{primer.investment}", required="required")
+													.modal-footer
+														button.btn.btn-white.close_educ_tool(type='button', data-dismiss='modal') Close
+														button.btn.btn-primary.save_variables(type='button') Save changes
 				button.btn.btn-w-m.btn-success(type='button') Next
 		include ../footer

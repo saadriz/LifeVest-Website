@@ -3,7 +3,7 @@ var router = express.Router();
 
 var passport = require('passport');
 var User = require("../model/user.js").User;
-var Account = require('../model/account');
+var Account = require('../model/account').Account;
 
 router.get('/', function (req, res) {
 	res.render('index', { user : req.user });
@@ -52,7 +52,8 @@ router.post('/login', function(req, res, next) {
 
 router.get('/primer', function(req, res, next) {
 	if (req.user) {
-		res.render('admin/tools/primer', { title: "LifVest | Start investing" })
+		console.log(req.user);
+		res.render('admin/tools/primer', { title: "LifVest | Start investing", primer: req.user.primer })
 	} else {
 		res.redirect('login');
 	}
@@ -89,6 +90,16 @@ router.post('/signup', function (req, res) {
 			return res.json(user);
 		}
 	});
+});
+
+router.post('/update-variables', function(req, res) {
+	var user = req.user;
+	user.primer = req.body;
+	console.log( req.body);
+	user.save(function(err){
+		if(err) return console.log(err);
+		return res.json({"status": 200, "message": "Variables updated with success !"});
+		});
 });
 
 /**

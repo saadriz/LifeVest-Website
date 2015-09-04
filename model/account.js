@@ -7,9 +7,29 @@ var passportLocalMongoose = require('passport-local-mongoose');
 
 var Account = new Schema({
 	username: String,
-	password: String
+	password: String,
+	primer: {
+		saving: {
+			type: Number,
+			default: 1000
+		},
+		years: {
+			type: Number,
+			default: 15
+		},
+		inflation: {
+			type: Number,
+			default: 3
+		},
+		investment: {
+			type: Number,
+			default: 7
+		}
+	}
 });
 
 Account.plugin(passportLocalMongoose);
 
 module.exports = mongoose.model('Account', Account);
+
+exports.Account = mongoose.model('Account', Account);

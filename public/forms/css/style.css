@@ -7476,6 +7476,7 @@ body.skin-3 {
     display: inline-block;
   }
 }
+
 /* Only demo */
 @media (max-width: 1000px) {
   .welcome-message {
@@ -7489,4 +7490,10 @@ body.skin-3 {
 .error_form {
   color: red;
   padding: 3px;
+}
+
+.jumbotron p {
+    margin-bottom: 15px;
+    font-size: 16px;
+    font-weight: 200;
 }
