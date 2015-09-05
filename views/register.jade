@@ -17,6 +17,8 @@ html
 				h3 Register to Lifvest
 				p Create a new Lifvest Account
 				form#ss-form.m-t(role='form',action='/register',method='post')
+					.error.alert-danger
+						| #{error}
 					.form-group
 						input.form-control(type='text', placeholder='Username', name='username', required='')
 					.form-group
@@ -25,7 +27,7 @@ html
 						input.form-control(type='password', placeholder='Password', name='password', required='')
 					.form-group
 						.checkbox.i-checks
-							input#agreement(type='checkbox', name='agreement')
+							input#agreement(type='checkbox', name='agreement', required="required")
 							|  Agree the terms and policy
 					button#signupBtn.btn.btn-primary.block.full-width.m-b(type='submit') Register
 				p.text-muted.text-center
