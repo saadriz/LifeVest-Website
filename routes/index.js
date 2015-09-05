@@ -3,7 +3,7 @@ var router = express.Router();
 
 var passport = require('passport');
 var User = require("../model/user.js").User;
-var Account = require('../model/account').Account;
+var Account = require('../model/account');
 
 router.get('/', function (req, res) {
 	res.render('index', { user : req.user });
@@ -11,7 +11,7 @@ router.get('/', function (req, res) {
 
 router.get('/main', function(req, res) {
 	if (req.user) {
-		res.render('/main', { title: "LifVest | Start investing" })
+		res.render('main', { title: "LifVest | Start investing" })
 	} else {
 		res.redirect('/login');
 	}
