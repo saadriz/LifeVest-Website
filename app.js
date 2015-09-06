@@ -6,7 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var routes = require('./routes/index');
-
+var config =  require('./config');
 var app = express();
 
 var passport = require('passport');
@@ -53,9 +53,7 @@ passport.deserializeUser(Account.deserializeUser());
  *  DB CONFIG
  */
 
-// var connection = mongoose.connect("mongodb://localhost:27017/lifevest");
-
-var connection = mongoose.connect("mongodb://marwen:marwen@ds049160.mongolab.com:49160/heroku_3mf91mkz");
+var connection = mongoose.connect(config.db.connectionString);
 
 mongoose.set('debug', true);
 
