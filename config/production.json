@@ -1,0 +1,5 @@
+{
+  "db": {
+    "connectionString": "mongodb://marwen:marwen@ds049160.mongolab.com:49160/heroku_3mf91mkz"
+  }
+}
